@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   Growl Registration Ticket.growlRegDict
+   DeadlineGrowl
+
+   Created by Alex on 19/04/2009.
+   Copyright 2009 Helicoid Limited. All rights reserved.
+-->
+<plist version="1.0">
+    <dict>
+		<key>TicketVersion</key>
+		<integer>1</integer>
+		<key>AllNotifications</key>
+		<array>
+			<string>File uploaded</string>
+			<string>URL copied</string>
+			<string>Bad configuration</string>
+		</array>
+		<key>DefaultNotifications</key>
+		<array>
+			<string>File uploaded</string>
+			<string>URL copied</string>
+			<string>Bad configuration</string>
+		</array>
+    </dict>
+</plist>
