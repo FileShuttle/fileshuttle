@@ -434,6 +434,4 @@
               forKey:@"clipboard_upload_shortcut"];
 }
 
-- (IBAction)setFilenamePopUpButton:(NSPopUpButton *)sender {
-}
 @end
