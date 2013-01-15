@@ -103,6 +103,8 @@
                                    @"YES",@"url_shortener",
                                    @"NO",@"dock_icon",
                                    @"YES",@"menubar_icon",
+                                   @"YES",@"use_filename",
+                                   @"YES",@"use_hash",
                                    @"NO",@"launch_at_login",
                                    @"YES",@"growl",
                                    @"YES",@"clipboard_upload",
@@ -115,6 +117,12 @@
 		{
 			[defaults setBool:YES forKey:@"menubar_icon"];
 		}
+      
+        if(![defaults boolForKey:@"use_hash"] && ![defaults boolForKey:@"use_filename"])
+        {
+            [defaults setBool:YES forKey:@"use_hash"];
+            [defaults setBool:YES forKey:@"use_filename"];
+        }
 		
 		[defaults addObserver:self
                forKeyPath:@"upload_screenshots"
@@ -381,10 +389,24 @@
 	}
 	
 	NSString *filename;
-	filename = [[file lastPathComponent] stringByDeletingPathExtension];
-	filename = [filename stringByAppendingFormat:@"-%@",randStr];
-	filename = [filename stringByAppendingPathExtension:[file pathExtension]];
-	
+   
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"use_filename"]) {
+        if([[NSUserDefaults standardUserDefaults] boolForKey:@"use_hash"]) {
+            filename = [[file lastPathComponent] stringByDeletingPathExtension];
+            filename = [filename stringByAppendingFormat:@"-%@",randStr];
+            filename = [filename stringByAppendingPathExtension:[file pathExtension]];
+        }
+        else {
+            filename = [[file lastPathComponent] stringByDeletingPathExtension];
+            filename = [filename stringByAppendingPathExtension:[file pathExtension]];
+        }
+    }
+    else {
+        filename = randStr;
+        filename = [filename stringByAppendingPathExtension:[file pathExtension]];
+        }
+
+ 
 	if(file)
 		[self.fileUploader uploadFile:file
                        toFilename:filename

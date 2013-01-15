@@ -22,6 +22,8 @@
 @property (strong, readwrite) NSString *selectedIdentifier;
 @property (strong, readwrite) NSView *selectedView;
 @property (assign, nonatomic) BOOL showDockIcon;
+@property (assign, nonatomic) BOOL use_filename;
+@property (assign, nonatomic) BOOL use_hash;
 @property (retain) NSTimer *passwordTimer;
 
 - (void)updateLaunchAtLoginFromValue;
@@ -54,7 +56,8 @@
             generalView                 = generalView_,
             advancedView                = advancedView_,
             showInPopUpButton           = showInPopUpButton_,
-            clipboardRecorderControl		= clipboardRecorderControl_,
+            setFilenamePopUpButton      = setFilenamePopUpButton_,
+            clipboardRecorderControl	= clipboardRecorderControl_,
             selectedIdentifier          = selectedIdentifier_,
             selectedView                = selectedView_,
             showDockIcon                = showDockIcon_,
@@ -101,6 +104,17 @@
 	}
 	else
 		[self.showInPopUpButton selectItemWithTag:0];
+    
+    if([defaults boolForKey:@"use_hash"]) {
+		if([defaults boolForKey:@"use_filename"]) {
+			[self.setFilenamePopUpButton selectItemWithTag:2];
+		}
+		else {
+			[self.setFilenamePopUpButton selectItemWithTag:1];
+		}
+	}
+	else
+		[self.setFilenamePopUpButton selectItemWithTag:0];
 	
 	self.clipboardRecorderControl.style = SRGreyStyle;
 	self.clipboardRecorderControl.animates = YES;
@@ -181,6 +195,23 @@
 	}
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (IBAction)setFilenamePopUpButtonChanged:(id)sender {
+	NSInteger tag = [self.setFilenamePopUpButton selectedTag];
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	if(tag == 0) {
+		[defaults setBool:YES forKey:@"use_filename"];
+		[defaults setBool:NO forKey:@"use_hash"];
+	}
+	else if(tag == 1) {
+		[defaults setBool:NO forKey:@"use_filename"];
+		[defaults setBool:YES forKey:@"use_hash"];
+	}
+	else if(tag == 2) {
+		[defaults setBool:YES forKey:@"use_filename"];
+		[defaults setBool:YES forKey:@"use_hash"];
+	}
+}
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark -
