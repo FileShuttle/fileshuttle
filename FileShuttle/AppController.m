@@ -103,7 +103,7 @@
                                    @"YES",@"url_shortener",
                                    @"NO",@"dock_icon",
                                    @"YES",@"menubar_icon",
-                                   @"NO",@"use_filename",
+                                   @"YES",@"use_filename",
                                    @"YES",@"use_hash",
                                    @"NO",@"launch_at_login",
                                    @"YES",@"growl",
@@ -121,6 +121,7 @@
         if(![defaults boolForKey:@"use_hash"] && ![defaults boolForKey:@"use_filename"])
         {
             [defaults setBool:YES forKey:@"use_hash"];
+            [defaults setBool:YES forKey:@"use_filename"];
         }
 		
 		[defaults addObserver:self
