@@ -40,7 +40,7 @@
 		4CCC76F31367575E001D5C9E /* MVDockImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC76F21367575E001D5C9E /* MVDockImage.m */; };
 		4CCC76F5136758C1001D5C9E /* fileshuttle.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4CCC76F4136758C0001D5C9E /* fileshuttle.icns */; };
 		4CCC76FD13675A29001D5C9E /* NSBezierPath-RoundedRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC76FC13675A29001D5C9E /* NSBezierPath-RoundedRect.m */; };
-		4CCC770013675B00001D5C9E /* MVDirectoryListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC76FF13675B00001D5C9E /* MVDirectoryListener.m */; };
+		4CCC770013675B00001D5C9E /* MVScreenshotsListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC76FF13675B00001D5C9E /* MVScreenshotsListener.m */; };
 		4CCC77031367627A001D5C9E /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC77021367627A001D5C9E /* NSString+MD5.m */; };
 		4CCC770513676313001D5C9E /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCC770413676313001D5C9E /* libcrypto.dylib */; };
 		4CCC770B1367638B001D5C9E /* MVFileUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC770A1367638B001D5C9E /* MVFileUploader.m */; };
@@ -118,8 +118,8 @@
 		4CCC76F4136758C0001D5C9E /* fileshuttle.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = fileshuttle.icns; path = ../fileshuttle.icns; sourceTree = "<group>"; };
 		4CCC76FB13675A29001D5C9E /* NSBezierPath-RoundedRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath-RoundedRect.h"; sourceTree = "<group>"; };
 		4CCC76FC13675A29001D5C9E /* NSBezierPath-RoundedRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath-RoundedRect.m"; sourceTree = "<group>"; };
-		4CCC76FE13675B00001D5C9E /* MVDirectoryListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVDirectoryListener.h; sourceTree = "<group>"; };
-		4CCC76FF13675B00001D5C9E /* MVDirectoryListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVDirectoryListener.m; sourceTree = "<group>"; };
+		4CCC76FE13675B00001D5C9E /* MVScreenshotsListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVScreenshotsListener.h; sourceTree = "<group>"; };
+		4CCC76FF13675B00001D5C9E /* MVScreenshotsListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVScreenshotsListener.m; sourceTree = "<group>"; };
 		4CCC77011367627A001D5C9E /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		4CCC77021367627A001D5C9E /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		4CCC770413676313001D5C9E /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = usr/lib/libcrypto.dylib; sourceTree = SDKROOT; };
@@ -247,8 +247,8 @@
 				4CFBC72413F9AFE30043F56A /* MVPreferencesController.m */,
 				4CCC76F11367575E001D5C9E /* MVDockImage.h */,
 				4CCC76F21367575E001D5C9E /* MVDockImage.m */,
-				4CCC76FE13675B00001D5C9E /* MVDirectoryListener.h */,
-				4CCC76FF13675B00001D5C9E /* MVDirectoryListener.m */,
+				4CCC76FE13675B00001D5C9E /* MVScreenshotsListener.h */,
+				4CCC76FF13675B00001D5C9E /* MVScreenshotsListener.m */,
 				4CCC77091367638B001D5C9E /* MVFileUploader.h */,
 				4CCC770A1367638B001D5C9E /* MVFileUploader.m */,
 				4C9F98CC14951E7B007B80DD /* MVURLShortener.h */,
@@ -358,7 +358,7 @@
 				4CCC76E413675648001D5C9E /* AppController.m in Sources */,
 				4CCC76F31367575E001D5C9E /* MVDockImage.m in Sources */,
 				4CCC76FD13675A29001D5C9E /* NSBezierPath-RoundedRect.m in Sources */,
-				4CCC770013675B00001D5C9E /* MVDirectoryListener.m in Sources */,
+				4CCC770013675B00001D5C9E /* MVScreenshotsListener.m in Sources */,
 				4CCC77031367627A001D5C9E /* NSString+MD5.m in Sources */,
 				4CCC770B1367638B001D5C9E /* MVFileUploader.m in Sources */,
 				4CFBC72513F9AFE30043F56A /* MVPreferencesController.m in Sources */,

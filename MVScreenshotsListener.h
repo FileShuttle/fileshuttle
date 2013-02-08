@@ -12,21 +12,12 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-@interface MVDirectoryListener : NSObject {
-@private
-  BOOL listening;
-	NSString *path;
-	NSString *extension;
-	NSDate *date;
-	NSObject <MVDirectoryListenerDelegate> *delegate;
+@interface MVScreenshotsListener : NSObject {
+
 }
 
 @property (assign, nonatomic) BOOL listening;
-@property (readonly) NSString *path;
-@property (retain) NSString *extension;
 @property (assign) NSObject <MVDirectoryListenerDelegate> *delegate;
-
-- (id)initWithPath:(NSString*)aPath;
 
 @end
 
@@ -35,7 +26,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 @protocol MVDirectoryListenerDelegate
 
-- (void)directoryListener:(MVDirectoryListener*)aDirectoryListener
-                  newFile:(NSString*)filename;
+- (void)directoryListener:(MVScreenshotsListener*)aDirectoryListener
+                  newFile:(NSURL*)fileURL;
 
 @end

@@ -10,7 +10,7 @@
 #import <ShortcutRecorder/ShortcutRecorder.h>
 #import "DDHotKeyCenter.h"
 #import "MVDockImage.h"
-#import "MVDirectoryListener.h"
+#import "MVScreenshotsListener.h"
 #import "MVFileUploader.h"
 #import "MVURLShortener.h"
 #import "MVZipFiles.h"
@@ -25,7 +25,7 @@
                                      MVStatusItemViewDelegate>
 {
 	MVDockImage *dockImage_;
-	MVDirectoryListener *screenshotsDirectoryListener_;
+	MVScreenshotsListener *screenshotsDirectoryListener_;
 	MVFileUploader *fileUploader_;
 	NSTimer *restoreDockIconTimer_;
 	NSStatusItem *statusItem_;
