@@ -48,6 +48,9 @@
 		4CCFAA7B14AA142400D4A0BD /* status_item_mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CCFAA7914AA142400D4A0BD /* status_item_mask.png */; };
 		4CFBC71D13F9AADA0043F56A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFBC71C13F9AADA0043F56A /* MainMenu.xib */; };
 		4CFBC72513F9AFE30043F56A /* MVPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFBC72413F9AFE30043F56A /* MVPreferencesController.m */; };
+		F8BE958616C64422001368E1 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8BE958516C64422001368E1 /* Sparkle.framework */; };
+		F8BE958916C64473001368E1 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = F8BE958516C64422001368E1 /* Sparkle.framework */; };
+		F8BE958C16C649DC001368E1 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = F8BE958B16C649DC001368E1 /* dsa_pub.pem */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,6 +61,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				4C4F4BDD16C5BA42005E32A3 /* CURLHandle.framework in Copy Frameworks */,
+				F8BE958916C64473001368E1 /* Sparkle.framework in Copy Frameworks */,
 				4C6B0C4114A920D600E35C50 /* ShortcutRecorder.framework in Copy Frameworks */,
 				4C9F98AA1493D2BB007B80DD /* Growl.framework in Copy Frameworks */,
 				4C9F98D6149521C7007B80DD /* RegexKit.framework in Copy Frameworks */,
@@ -130,6 +134,8 @@
 		4CFBC71C13F9AADA0043F56A /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		4CFBC72313F9AFE30043F56A /* MVPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVPreferencesController.h; sourceTree = "<group>"; };
 		4CFBC72413F9AFE30043F56A /* MVPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVPreferencesController.m; sourceTree = "<group>"; };
+		F8BE958516C64422001368E1 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		F8BE958B16C649DC001368E1 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +151,7 @@
 				4C9F98D514952069007B80DD /* RegexKit.framework in Frameworks */,
 				4C6B0C3F14A91FE900E35C50 /* ShortcutRecorder.framework in Frameworks */,
 				4C4F4BDC16C5BA18005E32A3 /* CURLHandle.framework in Frameworks */,
+				F8BE958616C64422001368E1 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +194,7 @@
 		4CCC76C4136755DE001D5C9E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F8BE958516C64422001368E1 /* Sparkle.framework */,
 				4C4F4BDB16C5BA18005E32A3 /* CURLHandle.framework */,
 				4C6B0C4214A925D600E35C50 /* Carbon.framework */,
 				4C6B0C3E14A91FE900E35C50 /* ShortcutRecorder.framework */,
@@ -230,6 +238,7 @@
 		4CCC76CC136755DE001D5C9E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F8BE958B16C649DC001368E1 /* dsa_pub.pem */,
 				4CCC76CD136755DE001D5C9E /* FileShuttle-Info.plist */,
 				4CCC76CE136755DE001D5C9E /* InfoPlist.strings */,
 				4CCC76D1136755DE001D5C9E /* FileShuttle-Prefix.pch */,
@@ -344,6 +353,7 @@
 				4C6CF8351497F32D002C1E14 /* status_item_error.png in Resources */,
 				4CCFAA7A14AA142400D4A0BD /* status_item_empty.png in Resources */,
 				4CCFAA7B14AA142400D4A0BD /* status_item_mask.png in Resources */,
+				F8BE958C16C649DC001368E1 /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +437,7 @@
 				IBC_NOTICES = YES;
 				IBC_WARNINGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "";
 				SDKROOT = macosx10.6;
 			};
