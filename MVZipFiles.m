@@ -58,6 +58,8 @@
 	// handle the task's termination status
 	if ([zipTask terminationStatus] == 0) {
 		[zipTask release];
+        NSDictionary *attributes=[NSDictionary dictionaryWithObject:[NSNumber numberWithShort:0644] forKey:NSFilePosixPermissions];
+        [[NSFileManager defaultManager] setAttributes:attributes ofItemAtPath:path error:nil];
 		return path;
 	}
 	[zipTask release];

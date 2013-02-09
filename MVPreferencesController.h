@@ -18,6 +18,7 @@
 	NSSecureTextField *passwordTextField_;
 	NSPopUpButton *showInPopUpButton_;
 	SRRecorderControl *clipboardRecorderControl_;
+    NSPopUpButton *setFilenamePopUpButton;
 }
 
 @property (assign) IBOutlet NSWindow *window;
@@ -26,11 +27,13 @@
 @property (assign) IBOutlet NSView *advancedView;
 @property (assign) IBOutlet NSSecureTextField *passwordTextField;
 @property (assign) IBOutlet NSPopUpButton *showInPopUpButton;
+@property (assign) IBOutlet NSPopUpButton *setFilenamePopUpButton;
 @property (assign) IBOutlet SRRecorderControl *clipboardRecorderControl;
 
 - (IBAction)toolbarItemAction:(id)sender;
 - (IBAction)protocolChanged:(id)sender;
 - (IBAction)passwordChanged:(id)sender;
 - (IBAction)showInPopUpButtonChanged:(id)sender;
+- (IBAction)setFilenamePopUpButtonChanged:(id)sender;
 
 @end

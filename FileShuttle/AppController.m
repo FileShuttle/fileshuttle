@@ -15,7 +15,7 @@
 @interface AppController ()
 
 @property (retain) MVDockImage *dockImage;
-@property (retain) MVDirectoryListener *screenshotsDirectoryListener;
+@property (retain) MVScreenshotsListener *screenshotsDirectoryListener;
 @property (retain) MVFileUploader *fileUploader;
 @property (retain) NSTimer *restoreDockIconTimer;
 @property (retain) NSStatusItem *statusItem;
@@ -103,6 +103,8 @@
                                    @"YES",@"url_shortener",
                                    @"NO",@"dock_icon",
                                    @"YES",@"menubar_icon",
+                                   @"YES",@"use_filename",
+                                   @"YES",@"use_hash",
                                    @"NO",@"launch_at_login",
                                    @"YES",@"growl",
                                    @"YES",@"clipboard_upload",
@@ -115,6 +117,12 @@
 		{
 			[defaults setBool:YES forKey:@"menubar_icon"];
 		}
+      
+        if(![defaults boolForKey:@"use_hash"] && ![defaults boolForKey:@"use_filename"])
+        {
+            [defaults setBool:YES forKey:@"use_hash"];
+            [defaults setBool:YES forKey:@"use_filename"];
+        }
 		
 		[defaults addObserver:self
                forKeyPath:@"upload_screenshots"
@@ -150,26 +158,10 @@
 		
 		lastUploadedFilesMenuItems_ = [[NSMutableArray alloc] init];
 		
-		// screen capture preferences
-		NSString *scprefspath = [NSHomeDirectory() stringByAppendingPathComponent:
-                             @"Library/Preferences/com.apple.screencapture.plist"];
-		NSDictionary *scdict = [NSDictionary dictionaryWithContentsOfFile:scprefspath];
-		
-		// path for screen captures
-		NSString *screenshotsPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Desktop"];
-		if (scdict && [scdict objectForKey:@"location"])
-			screenshotsPath = [scdict objectForKey:@"location"];
-    
 		// listener for this directory
-		screenshotsDirectoryListener_ = [[MVDirectoryListener alloc] initWithPath:screenshotsPath];
+		screenshotsDirectoryListener_ = [[MVScreenshotsListener alloc] init];
 		[screenshotsDirectoryListener_ setListening:[defaults boolForKey:@"upload_screenshots"]];
 		[screenshotsDirectoryListener_ setDelegate:self];
-		
-		// file extension
-		NSString *extension = @"png";
-		if (scdict && [scdict objectForKey:@"type"])
-			extension = [scdict objectForKey:@"type"];
-		[screenshotsDirectoryListener_ setExtension:extension];
 		
 		// status menu
 		statusMenu_ = [[NSMenu alloc] init];
@@ -381,10 +373,24 @@
 	}
 	
 	NSString *filename;
-	filename = [[file lastPathComponent] stringByDeletingPathExtension];
-	filename = [filename stringByAppendingFormat:@"-%@",randStr];
-	filename = [filename stringByAppendingPathExtension:[file pathExtension]];
-	
+   
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"use_filename"]) {
+        if([[NSUserDefaults standardUserDefaults] boolForKey:@"use_hash"]) {
+            filename = [[file lastPathComponent] stringByDeletingPathExtension];
+            filename = [filename stringByAppendingFormat:@"-%@",randStr];
+            filename = [filename stringByAppendingPathExtension:[file pathExtension]];
+        }
+        else {
+            filename = [[file lastPathComponent] stringByDeletingPathExtension];
+            filename = [filename stringByAppendingPathExtension:[file pathExtension]];
+        }
+    }
+    else {
+        filename = randStr;
+        filename = [filename stringByAppendingPathExtension:[file pathExtension]];
+        }
+
+ 
 	if(file)
 		[self.fileUploader uploadFile:file
                        toFilename:filename
@@ -552,11 +558,10 @@
 #pragma mark DirectoryListenerDelegate methods
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)directoryListener:(MVDirectoryListener *)aDirectoryListener
-                  newFile:(NSString *)filename
+- (void)directoryListener:(MVScreenshotsListener *)aDirectoryListener
+                  newFile:(NSURL *)fileURL
 {
-	NSString *filepath = [[aDirectoryListener path] stringByAppendingPathComponent:filename];
-	[self uploadFiles:[NSArray arrayWithObject:filepath]];
+	[self uploadFiles:[NSArray arrayWithObject:fileURL.path]];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

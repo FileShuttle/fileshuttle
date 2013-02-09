@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C4F4BDC16C5BA18005E32A3 /* CURLHandle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C4F4BDB16C5BA18005E32A3 /* CURLHandle.framework */; };
+		4C4F4BDD16C5BA42005E32A3 /* CURLHandle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4C4F4BDB16C5BA18005E32A3 /* CURLHandle.framework */; };
 		4C6B0C3F14A91FE900E35C50 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6B0C3E14A91FE900E35C50 /* ShortcutRecorder.framework */; };
 		4C6B0C4114A920D600E35C50 /* ShortcutRecorder.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6B0C3E14A91FE900E35C50 /* ShortcutRecorder.framework */; };
 		4C6B0C4414A925E100E35C50 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6B0C4214A925D600E35C50 /* Carbon.framework */; };
@@ -38,7 +40,7 @@
 		4CCC76F31367575E001D5C9E /* MVDockImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC76F21367575E001D5C9E /* MVDockImage.m */; };
 		4CCC76F5136758C1001D5C9E /* fileshuttle.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4CCC76F4136758C0001D5C9E /* fileshuttle.icns */; };
 		4CCC76FD13675A29001D5C9E /* NSBezierPath-RoundedRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC76FC13675A29001D5C9E /* NSBezierPath-RoundedRect.m */; };
-		4CCC770013675B00001D5C9E /* MVDirectoryListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC76FF13675B00001D5C9E /* MVDirectoryListener.m */; };
+		4CCC770013675B00001D5C9E /* MVScreenshotsListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC76FF13675B00001D5C9E /* MVScreenshotsListener.m */; };
 		4CCC77031367627A001D5C9E /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC77021367627A001D5C9E /* NSString+MD5.m */; };
 		4CCC770513676313001D5C9E /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCC770413676313001D5C9E /* libcrypto.dylib */; };
 		4CCC770B1367638B001D5C9E /* MVFileUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC770A1367638B001D5C9E /* MVFileUploader.m */; };
@@ -55,6 +57,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				4C4F4BDD16C5BA42005E32A3 /* CURLHandle.framework in Copy Frameworks */,
 				4C6B0C4114A920D600E35C50 /* ShortcutRecorder.framework in Copy Frameworks */,
 				4C9F98AA1493D2BB007B80DD /* Growl.framework in Copy Frameworks */,
 				4C9F98D6149521C7007B80DD /* RegexKit.framework in Copy Frameworks */,
@@ -65,6 +68,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4C4F4BDB16C5BA18005E32A3 /* CURLHandle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CURLHandle.framework; sourceTree = "<group>"; };
 		4C6B0C3E14A91FE900E35C50 /* ShortcutRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShortcutRecorder.framework; sourceTree = "<group>"; };
 		4C6B0C4214A925D600E35C50 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		4C6B0C4914A9265600E35C50 /* DDHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHotKeyCenter.h; sourceTree = "<group>"; };
@@ -114,8 +118,8 @@
 		4CCC76F4136758C0001D5C9E /* fileshuttle.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = fileshuttle.icns; path = ../fileshuttle.icns; sourceTree = "<group>"; };
 		4CCC76FB13675A29001D5C9E /* NSBezierPath-RoundedRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath-RoundedRect.h"; sourceTree = "<group>"; };
 		4CCC76FC13675A29001D5C9E /* NSBezierPath-RoundedRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath-RoundedRect.m"; sourceTree = "<group>"; };
-		4CCC76FE13675B00001D5C9E /* MVDirectoryListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVDirectoryListener.h; sourceTree = "<group>"; };
-		4CCC76FF13675B00001D5C9E /* MVDirectoryListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVDirectoryListener.m; sourceTree = "<group>"; };
+		4CCC76FE13675B00001D5C9E /* MVScreenshotsListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVScreenshotsListener.h; sourceTree = "<group>"; };
+		4CCC76FF13675B00001D5C9E /* MVScreenshotsListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVScreenshotsListener.m; sourceTree = "<group>"; };
 		4CCC77011367627A001D5C9E /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		4CCC77021367627A001D5C9E /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		4CCC770413676313001D5C9E /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = usr/lib/libcrypto.dylib; sourceTree = SDKROOT; };
@@ -140,6 +144,7 @@
 				4C9F98A91493D273007B80DD /* Growl.framework in Frameworks */,
 				4C9F98D514952069007B80DD /* RegexKit.framework in Frameworks */,
 				4C6B0C3F14A91FE900E35C50 /* ShortcutRecorder.framework in Frameworks */,
+				4C4F4BDC16C5BA18005E32A3 /* CURLHandle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +187,7 @@
 		4CCC76C4136755DE001D5C9E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C4F4BDB16C5BA18005E32A3 /* CURLHandle.framework */,
 				4C6B0C4214A925D600E35C50 /* Carbon.framework */,
 				4C6B0C3E14A91FE900E35C50 /* ShortcutRecorder.framework */,
 				4C9F98D414952069007B80DD /* RegexKit.framework */,
@@ -241,8 +247,8 @@
 				4CFBC72413F9AFE30043F56A /* MVPreferencesController.m */,
 				4CCC76F11367575E001D5C9E /* MVDockImage.h */,
 				4CCC76F21367575E001D5C9E /* MVDockImage.m */,
-				4CCC76FE13675B00001D5C9E /* MVDirectoryListener.h */,
-				4CCC76FF13675B00001D5C9E /* MVDirectoryListener.m */,
+				4CCC76FE13675B00001D5C9E /* MVScreenshotsListener.h */,
+				4CCC76FF13675B00001D5C9E /* MVScreenshotsListener.m */,
 				4CCC77091367638B001D5C9E /* MVFileUploader.h */,
 				4CCC770A1367638B001D5C9E /* MVFileUploader.m */,
 				4C9F98CC14951E7B007B80DD /* MVURLShortener.h */,
@@ -352,7 +358,7 @@
 				4CCC76E413675648001D5C9E /* AppController.m in Sources */,
 				4CCC76F31367575E001D5C9E /* MVDockImage.m in Sources */,
 				4CCC76FD13675A29001D5C9E /* NSBezierPath-RoundedRect.m in Sources */,
-				4CCC770013675B00001D5C9E /* MVDirectoryListener.m in Sources */,
+				4CCC770013675B00001D5C9E /* MVScreenshotsListener.m in Sources */,
 				4CCC77031367627A001D5C9E /* NSString+MD5.m in Sources */,
 				4CCC770B1367638B001D5C9E /* MVFileUploader.m in Sources */,
 				4CFBC72513F9AFE30043F56A /* MVPreferencesController.m in Sources */,
@@ -388,7 +394,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_IDENTITY = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -403,7 +409,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
-				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx10.6;
 			};
 			name = Debug;
@@ -412,7 +417,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_IDENTITY = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
@@ -423,7 +428,6 @@
 				IBC_WARNINGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CFLAGS = "";
-				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx10.6;
 			};
 			name = Release;
