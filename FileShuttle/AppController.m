@@ -100,6 +100,7 @@
                                    @"FTP", @"protocol",
                                    @"21", @"port",
                                    @"YES",@"upload_screenshots",
+                                   @"NO",@"delete_screenshots",
                                    @"YES",@"url_shortener",
                                    @"NO",@"dock_icon",
                                    @"YES",@"menubar_icon",
@@ -561,7 +562,8 @@
 - (void)directoryListener:(MVScreenshotsListener *)aDirectoryListener
                   newFile:(NSURL *)fileURL
 {
-	[self uploadFiles:[NSArray arrayWithObject:fileURL.path]];
+	BOOL deleteScreenshots = [[NSUserDefaults standardUserDefaults] boolForKey:@"delete_screenshots"];
+	[self uploadFiles:[NSArray arrayWithObject:fileURL.path] deleteFile:deleteScreenshots];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
