@@ -334,14 +334,32 @@
 {
 	if(![self areConnectionSettingsFilled])
 	{
-		if([[NSUserDefaults standardUserDefaults] boolForKey:@"growl"])
-			[GrowlApplicationBridge notifyWithTitle:@"Upload failed"
-                                  description:@"Please check your connection configuration"
-                             notificationName:@"Bad configuration"
-                                     iconData:self.originalDockImageData
-                                     priority:0
-                                     isSticky:FALSE
-                                 clickContext:nil];
+        if([[NSUserDefaults standardUserDefaults] boolForKey:@"growl"])
+        {
+            NSString *title = @"Upload failed";
+            NSString *description = @"Please check your connection configuration";
+            NSString *notificationName = @"Bad configuration";
+            
+            if(NSClassFromString(@"NSUserNotification"))
+            {
+                NSUserNotification *notification = [NSUserNotification new];
+                notification.hasActionButton = NO;
+                notification.title = title;
+                notification.informativeText = description;
+                [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:notification];
+            }
+            else
+            {
+                [GrowlApplicationBridge notifyWithTitle:title
+                                            description:description
+                                       notificationName:notificationName
+                                               iconData:self.originalDockImageData
+                                               priority:0
+                                               isSticky:FALSE
+                                           clickContext:nil];
+            }
+        }
+        
 		return;
 	}
 	
@@ -526,17 +544,32 @@
 	NSString *type = NSStringPboardType;
 	[[NSPasteboard generalPasteboard] declareTypes:[NSArray arrayWithObject:type] owner:nil];
 	[[NSPasteboard generalPasteboard] setString:url forType:type];
-	
-	
-	
-	if([[NSUserDefaults standardUserDefaults] boolForKey:@"growl"])
-		[GrowlApplicationBridge notifyWithTitle:@"Paste it!"
-                                description:@"The URL has been written into your pasteboard"
-                           notificationName:@"URL copied"
-                                   iconData:self.originalDockImageData
-                                   priority:0
-                                   isSticky:FALSE
-                               clickContext:nil];
+    
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"growl"])
+    {
+        NSString *title = @"Paste it!";
+        NSString *description = @"The URL has been written into your pasteboard";
+        NSString *notificationName = @"URL copied";
+        
+        if(NSClassFromString(@"NSUserNotification"))
+        {
+            NSUserNotification *notification = [NSUserNotification new];
+            notification.hasActionButton = NO;
+            notification.title = title;
+            notification.informativeText = description;
+            [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:notification];
+        }
+        else
+        {
+            [GrowlApplicationBridge notifyWithTitle:title
+                                        description:description
+                                   notificationName:notificationName
+                                           iconData:self.originalDockImageData
+                                           priority:0
+                                           isSticky:FALSE
+                                       clickContext:nil];
+        }
+    }
 	
 	[self displayCompletedIcons];
 }
@@ -590,14 +623,32 @@
                                                              selector:@selector(restoreDockIcon)
                                                              userInfo:nil
                                                               repeats:NO];
-	if([[NSUserDefaults standardUserDefaults] boolForKey:@"growl"])
-		[GrowlApplicationBridge notifyWithTitle:@"Upload failed"
-                                description:@"Please check your connection configuration and internet connection."
-                           notificationName:@"Bad configuration"
-                                   iconData:self.originalDockImageData
-                                   priority:0
-                                   isSticky:FALSE
-                               clickContext:nil];
+    
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"growl"])
+    {
+        NSString *title = @"Upload failed";
+        NSString *description = @"Please check your connection configuration and internet connection.";
+        NSString *notificationName = @"Bad configuration";
+        
+        if(NSClassFromString(@"NSUserNotification"))
+        {
+            NSUserNotification *notification = [NSUserNotification new];
+            notification.hasActionButton = NO;
+            notification.title = title;
+            notification.informativeText = description;
+            [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:notification];
+        }
+        else
+        {
+            [GrowlApplicationBridge notifyWithTitle:title
+                                        description:description
+                                   notificationName:notificationName
+                                           iconData:self.originalDockImageData
+                                           priority:0
+                                           isSticky:FALSE
+                                       clickContext:nil];
+        }
+    }
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -667,14 +718,32 @@ didChangeProgression:(float)progression
 	}
 	
 	self.dockImage.state = MVDockImageStateNormal;
-	if([[NSUserDefaults standardUserDefaults] boolForKey:@"growl"])
-		[GrowlApplicationBridge notifyWithTitle:@"File uploaded"
-                                description:@"The URL has been written into your pasteboard"
-                           notificationName:@"File uploaded"
-                                   iconData:self.originalDockImageData
-                                   priority:0
-                                   isSticky:FALSE
-                               clickContext:nil];
+    
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"growl"])
+    {
+        NSString *title = @"File uploaded";
+        NSString *description = @"The URL has been written into your pasteboard";
+        NSString *notificationName = @"File uploaded";
+        
+        if(NSClassFromString(@"NSUserNotification"))
+        {
+            NSUserNotification *notification = [NSUserNotification new];
+            notification.hasActionButton = NO;
+            notification.title = title;
+            notification.informativeText = description;
+            [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:notification];
+        }
+        else
+        {
+            [GrowlApplicationBridge notifyWithTitle:title
+                                        description:description
+                                   notificationName:notificationName
+                                           iconData:self.originalDockImageData
+                                           priority:0
+                                           isSticky:FALSE
+                                       clickContext:nil];
+        }
+    }
   
 	[self displayCompletedIcons];
 }
