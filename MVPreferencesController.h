@@ -28,6 +28,8 @@
 @property (assign) IBOutlet NSSecureTextField *passwordTextField;
 @property (assign) IBOutlet NSPopUpButton *showInPopUpButton;
 @property (assign) IBOutlet NSPopUpButton *setFilenamePopUpButton;
+@property (assign) IBOutlet NSButton *changePermissionsCheckbox;
+@property (assign) IBOutlet NSTextField *permissionsTextField;
 @property (assign) IBOutlet SRRecorderControl *clipboardRecorderControl;
 
 - (IBAction)toolbarItemAction:(id)sender;
@@ -35,5 +37,6 @@
 - (IBAction)passwordChanged:(id)sender;
 - (IBAction)showInPopUpButtonChanged:(id)sender;
 - (IBAction)setFilenamePopUpButtonChanged:(id)sender;
+- (IBAction)changePermissionsCheckboxChanged:(id)sender;
 
 @end

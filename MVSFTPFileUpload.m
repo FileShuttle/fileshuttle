@@ -57,60 +57,33 @@ int scpconnecting = 0;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)startFromThread {
-	NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-	
-	NSURL *url = [NSURL URLWithString:self.destination];
-	NSString *path = url.relativePath;
-	path = [path stringByReplacingOccurrencesOfString:@" " withString:@"\\ "];
-	NSString *userathostString = [NSString stringWithFormat:@"%@@%@:%@",
-                                self.username, url.host, path];
-	char* userathost = (char*)[userathostString UTF8String];
-	char* password = (char*)[self.password UTF8String];
-	int portnumber = [url.port intValue];
-	char* localfile = (char*)[[self.source path] UTF8String];
-	int scpType = 0;
-	
-	fd_set		readmask;
-  FILE		*mfp;
-  int			copying = 0;
-  int			status, pwsent = 0, validpw = 0, noscp = 0, loading = 0;
+- (BOOL)execBlockingSSHExecutable:(char *)executable withArguments:(char **)execargs password:(char *)password
+{
 	char		ttyname[ MAXPATHLEN ];
-  unichar		buf[ MAXPATHLEN ];
-  char		executable[ MAXPATHLEN], *execargs[ 7 ];
-  NSString		*scpBinary;
+	int			status;
 	
-	scpBinary = @"/usr/bin/scp";
-  strcpy( executable, [ scpBinary UTF8String ] );
-  execargs[ 0 ] = executable;
-	
-  scpconnecting = 1;
-	
-	char* portarg = (char*)[[[NSNumber numberWithInt:portnumber]stringValue]UTF8String];
-	
-  //execargs[ 1 ] = "-r";
-  //	execargs[ 1 ] = "-q";
-  execargs[ 1 ] = "-P";
-  execargs[ 2 ] = portarg;
-  execargs[ 3 ] = ( scpType == 0 ? localfile : userathost );
-  execargs[ 4 ] = ( scpType == 0 ? userathost : localfile );
-  execargs[ 5 ] = NULL;
-  
-	NSString *line;
+	execargs[0] = executable;
 	
   if ((self.scppid = forkpty( &masterfd_, ttyname, NULL, NULL ))) {
     if ( fcntl( self.masterfd, F_SETFL, O_NONBLOCK ) < 0 ) {	/* prevent master from blocking */
     }
-    
-    if (( mfp = fdopen( self.masterfd, "r" )) == NULL ) {
+		
+		fd_set	readmask;
+		unichar	buf[ MAXPATHLEN ];
+		int     pwsent = 0, validpw = 0, noscp = 0, loading = 0, copying = 0;
+		NSString *line;
+		FILE		*mfp;
+		
+		if (( mfp = fdopen( self.masterfd, "r" )) == NULL ) {
 			[self performSelectorOnMainThread:@selector(error:)
                              withObject:@"fdopen master fd returned NULL"
                           waitUntilDone:YES];
-			return;
+			return NO;
     }
+		
     setvbuf( mfp, NULL, _IONBF, 0 );
-    
-    for ( ;; ) {
+		
+		for ( ;; ) {
       NSAutoreleasePool	*pool = [[ NSAutoreleasePool alloc ] init ];
 			FD_ZERO( &readmask );
       FD_SET( self.masterfd, &readmask );
@@ -118,7 +91,7 @@ int scpconnecting = 0;
 				[self performSelectorOnMainThread:@selector(error:)
                                withObject:@"select() returned a value less than zero"
                             waitUntilDone:YES];
-				return;
+				return NO;
       }
       
       if ( FD_ISSET( self.masterfd, &readmask )) {
@@ -148,10 +121,9 @@ int scpconnecting = 0;
 						[self performSelectorOnMainThread:@selector(error:)
                                    withObject:line
                                 waitUntilDone:YES];
-						return;
+						return NO;
 					}
 				}
-        
         
         memset(( char * )buf, '\0', strlen(( char * )buf ));
         [ pool release ];
@@ -159,23 +131,26 @@ int scpconnecting = 0;
       }
     }
 		
-    self.scppid = wait( &status );
-		
 		if ( fclose( mfp ) != 0 ) {
 			NSLog(@"fclose failed: %s", strerror( errno ));
 		}
 		( void )close( self.masterfd );
-		
-		
+				
+		self.scppid = wait( &status );
+				
     if ( WIFEXITED( status )) {
       // Normal exit
     } else if ( WIFSIGNALED( status )) {
       NSLog(@"Exit with signal = %d\n", status);
+			return NO;
     } else if ( WIFSTOPPED( status )) {
 			NSLog(@"WIFSTOPPED\n");
+			return NO;
     }
     
     self.scppid = 0;
+		
+		return YES;
   } else if ( self.scppid < 0 ) {
     NSLog( @"forkpty failed: %s", strerror( errno ));
   } else {
@@ -183,8 +158,81 @@ int scpconnecting = 0;
 		[self performSelectorOnMainThread:@selector(error:)
                            withObject:@"execve failed"
                         waitUntilDone:YES];
-		return;
   }
+	
+	return NO;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)startFromThread {
+	NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+	
+	NSURL *url = [NSURL URLWithString:self.destination];
+	NSString *path = url.relativePath;
+	path = [path stringByReplacingOccurrencesOfString:@" " withString:@"\\ "];
+	NSString *userathostString = [NSString stringWithFormat:@"%@@%@:%@",
+                                self.username, url.host, path];
+	char* userathost = (char*)[userathostString UTF8String];
+	char* password = (char*)[self.password UTF8String];
+	int portnumber = [url.port intValue];
+	char* localfile = (char*)[[self.source path] UTF8String];
+	int scpType = 0;
+	
+  char		executable[ MAXPATHLEN ], *execargs[ 7 ];
+	char    chmodExecutable[ MAXPATHLEN ], chmodPermissions[ 256 ], *chmodargs[ 6 ];
+  NSString		*scpBinary;
+	
+	scpBinary = @"/usr/bin/scp";
+  strcpy( executable, [ scpBinary UTF8String ] );
+  execargs[ 0 ] = executable;
+	
+  scpconnecting = 1;
+	
+	char* portarg = (char*)[[[NSNumber numberWithInt:portnumber]stringValue]UTF8String];
+	
+  //execargs[ 1 ] = "-r";
+  //	execargs[ 1 ] = "-q";
+  execargs[ 1 ] = "-P";
+  execargs[ 2 ] = portarg;
+  execargs[ 3 ] = ( scpType == 0 ? localfile : userathost );
+  execargs[ 4 ] = ( scpType == 0 ? userathost : localfile );
+  execargs[ 5 ] = NULL;
+	
+	if (self.changePermissions) {
+		NSString *sshBinary = @"/usr/bin/ssh";
+		strcpy(chmodExecutable, [sshBinary UTF8String]);
+		
+		strncpy(chmodPermissions, [self.permissionString UTF8String], 256);
+		
+		NSString *servernameString = [NSString stringWithFormat:@"%@@%@",
+																	self.username, url.host];
+		char* servername = (char*)[servernameString UTF8String];
+		
+		NSString *filenameString = path;
+		char* filename = (char*)[filenameString UTF8String];
+		
+		chmodargs[ 0 ] = chmodExecutable;
+		chmodargs[ 1 ] = servername;
+		chmodargs[ 2 ] = "chmod";
+		chmodargs[ 3 ] = chmodPermissions;
+		chmodargs[ 4 ] = filename;
+		chmodargs[ 5 ] = NULL;		
+	}
+	
+	BOOL scpStatus = [self execBlockingSSHExecutable:executable withArguments:execargs password:password];
+	if (!scpStatus) {
+		[pool release];
+		return;
+	}
+	
+	if (self.changePermissions)
+	{
+		BOOL sshStatus = [self execBlockingSSHExecutable:chmodExecutable withArguments:chmodargs password:password];
+		if (!sshStatus) {
+			[pool release];
+			return;
+		}
+	}
 	
 	[pool release];
 	
