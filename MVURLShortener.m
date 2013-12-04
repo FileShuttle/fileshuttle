@@ -15,16 +15,16 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (NSString*)shortenURL:(NSString*)url {
 	NSString *shttleUrl = [NSString stringWithFormat:
-                         @"http://sht.tl/api.php?action=shorten&longUrl=%@",url];
+                         @"http://is.gd/create.php?format=simple&url=%@",url];
 	NSString *doc = [NSString stringWithContentsOfURL:[NSURL URLWithString:shttleUrl]
                                            encoding:NSUTF8StringEncoding error:nil];
 	if(doc == nil) return nil;
 	
-	NSString *shortenedUrl = nil;
-	BOOL matched = [doc getCapturesWithRegexAndReferences:@"\\<shortUrl\\>(.*)\\<\\/shortUrl\\>",
-                  @"${1}", &shortenedUrl, nil];
-	if(matched) return shortenedUrl;
-	return nil;
+    if([doc isEqual: @"Error: Please enter a valid URL to shorten"]) {
+        return nil;
+    } else {
+        return doc;
+    }
 }
 
 @end
