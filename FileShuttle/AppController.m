@@ -582,8 +582,8 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)windowDidUpdate:(NSNotification*)notification
 {
-	if(self.statusItem && self.statusItem.view.window)
-		[self.statusItem.view.window makeKeyAndOrderFront:self];
+//	if(self.statusItem && self.statusItem.view.window)
+//		[self.statusItem.view.window makeKeyAndOrderFront:self];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
