@@ -12,6 +12,8 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 @interface MVFileUpload : NSObject {
+	BOOL changePermissions_;
+	NSString *permissionString_;
 	NSString *destination_;
 	NSString *username_;
 	NSString *password_;
@@ -24,6 +26,8 @@
 @property (retain) NSString *password;
 @property (retain) NSURL *source;
 @property (assign) NSObject <MVFileUploadDelegate> *delegate;
+@property (assign) BOOL changePermissions;
+@property (retain) NSString *permissionString;
 
 - (id)initWithDestination:(NSString *)destination
                  username:(NSString *)username

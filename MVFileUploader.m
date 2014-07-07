@@ -104,6 +104,12 @@
 		[path appendString:@"/"];
 	[path appendString:encodedFilename];
   
+	BOOL changePermissions = [defaults boolForKey:@"change_permissions"];
+	NSString *permissionString = nil;
+	if (changePermissions) {
+		permissionString = [defaults stringForKey:@"permission_string"];
+	}
+	
 	NSString *protocol = [defaults stringForKey:@"protocol"];
 	NSString *hostname = [defaults stringForKey:@"host"];
 	int port = [[defaults stringForKey:@"port"] intValue];
@@ -137,6 +143,9 @@
                                                          password:password
                                                            source:source
                                                          delegate:self];
+		
+		tmpFileUpload.changePermissions = changePermissions;
+		tmpFileUpload.permissionString = permissionString;
 	}
 	
 	self.fileUpload = tmpFileUpload;

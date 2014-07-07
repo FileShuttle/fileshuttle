@@ -115,6 +115,18 @@
 	}
 	else
 		[self.setFilenamePopUpButton selectItemWithTag:0];
+
+	NSString *protocol = [defaults valueForKey:@"protocol"];
+	if([protocol compare:@"SFTP"] == NSOrderedSame) {
+		BOOL changePermissions = [defaults boolForKey:@"change_permissions"];
+		self.changePermissionsCheckbox.enabled = changePermissions;
+		self.changePermissionsCheckbox.state = changePermissions ? NSOnState : NSOffState;
+		self.permissionsTextField.enabled = YES;
+	} else {
+		self.changePermissionsCheckbox.enabled = NO;
+		self.changePermissionsCheckbox.state = NSOffState;
+		self.permissionsTextField.enabled = NO;
+	}
 	
 	self.clipboardRecorderControl.style = SRGreyStyle;
 	self.clipboardRecorderControl.animates = YES;
@@ -124,11 +136,11 @@
 	if(dic) {
 		self.clipboardRecorderControl.keyCombo = MVKeyComboFromDictionary(dic);
 	}
-  
-  [self.toolbar setSelectedItemIdentifier:kMVGeneralIdentifier];
-  self.selectedIdentifier = kMVGeneralIdentifier;
-  self.selectedView = nil;
-  [self layoutView:NO];
+    
+    [self.toolbar setSelectedItemIdentifier:kMVGeneralIdentifier];
+    self.selectedIdentifier = kMVGeneralIdentifier;
+    self.selectedView = nil;
+    [self layoutView:NO];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -164,11 +176,20 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (IBAction)protocolChanged:(id)sender {
-	NSString *protocol = [[NSUserDefaults standardUserDefaults] valueForKey:@"protocol"];
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSString *protocol = [defaults valueForKey:@"protocol"];
 	
 	NSString *port = @"21";
-	if([protocol compare:@"SFTP"] == NSOrderedSame)
+  if([protocol compare:@"SFTP"] == NSOrderedSame) {
 		port = @"22";
+		self.changePermissionsCheckbox.state = [defaults boolForKey:@"change_permissions"];
+		self.permissionsTextField.enabled = [defaults boolForKey:@"change_permissions"];
+    self.changePermissionsCheckbox.enabled = YES;
+	} else {
+		self.changePermissionsCheckbox.enabled = NO;
+		self.changePermissionsCheckbox.state = NSOffState;
+		self.permissionsTextField.enabled = NO;
+	}
 	[[NSUserDefaults standardUserDefaults] setValue:port forKey:@"port"];
 }
 
@@ -212,6 +233,25 @@
 		[defaults setBool:YES forKey:@"use_hash"];
 	}
 }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (IBAction)changePermissionsCheckboxChanged:(id)sender
+{
+    NSButton *checkbox = sender;
+    BOOL changePermissions = checkbox.state == NSOnState;
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:changePermissions forKey:@"change_permissions"];
+    
+    self.permissionsTextField.enabled = changePermissions;
+    if (changePermissions) {
+			[self.permissionsTextField becomeFirstResponder];
+			if (![defaults stringForKey:@"permission_string"]) {
+				[defaults setObject:@"644" forKey:@"permission_string"];
+			}
+    }
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark -
