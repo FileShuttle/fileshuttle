@@ -6,6 +6,7 @@ FileShuttle is a little tool to quickly upload files on the Web. It supports FTP
 Download 2.x-dev **WARNING - Development Version**: http://fileshuttle.io/fileshuttle-2.x-dev.zip
 * **New Feature** - Option to auto delete screenshot after upload.
 * **New Feature** - Notification Center support - Falls back to growl on Pre 10.8
+* **New Feature** - Allow for file permission modification after upload with SFTP (no FTP at this stage)
 * **Bugfix** - URL shortener fixed by using is.gd - pending rewrite and having multiple choices
 * **Bugfix** - Fix display of menu bar icon in fullscreen apps
 
