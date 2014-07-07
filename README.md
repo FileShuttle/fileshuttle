@@ -7,6 +7,7 @@ Download 2.x-dev **WARNING - Development Version**: http://fileshuttle.io/filesh
 * **New Feature** - Option to auto delete screenshot after upload.
 * **New Feature** - Notification Center support - Falls back to growl on Pre 10.8
 * **Bugfix** - URL shortener fixed by using is.gd - pending rewrite and having multiple choices
+* **Bugfix** - Fix display of menu bar icon in fullscreen apps
 
 Download 2.1 : http://fileshuttle.io/fileshuttle-2.1.zip
 * **Bugfix** - Auto Screenshot Uploads on Mountain Lion (10.8).
