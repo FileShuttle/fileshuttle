@@ -197,15 +197,6 @@
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)awakeFromNib
-{
-	[[NSNotificationCenter defaultCenter] addObserver:self
-                                           selector:@selector(windowDidUpdate:)
-                                               name:NSWindowDidUpdateNotification
-                                             object:nil];
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary *)change
