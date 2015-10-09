@@ -134,7 +134,7 @@
                                                           source:source
                                                         delegate:self];
 	}
-	else if([protocol isEqualToString:@"SFTP"]) {
+	else if([protocol isEqualToString:@"SFTP"] || [protocol isEqualToString:@"SCP"]) {
 		NSString *destination = [NSString stringWithFormat:
                              @"ssh://%@:%i/%@",hostname,port,path];
 		

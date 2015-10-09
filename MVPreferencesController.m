@@ -117,7 +117,7 @@
 		[self.setFilenamePopUpButton selectItemWithTag:0];
 
 	NSString *protocol = [defaults valueForKey:@"protocol"];
-	if([protocol compare:@"SFTP"] == NSOrderedSame) {
+	if([protocol compare:@"SFTP"] == NSOrderedSame || [protocol compare:@"SCP"] == NSOrderedSame) {
 		BOOL changePermissions = [defaults boolForKey:@"change_permissions"];
 		self.changePermissionsCheckbox.enabled = changePermissions;
 		self.changePermissionsCheckbox.state = changePermissions ? NSOnState : NSOffState;
@@ -180,7 +180,7 @@
 	NSString *protocol = [defaults valueForKey:@"protocol"];
 	
 	NSString *port = @"21";
-  if([protocol compare:@"SFTP"] == NSOrderedSame) {
+  if([protocol compare:@"SFTP"] == NSOrderedSame || [protocol compare:@"SCP"] == NSOrderedSame) {
 		port = @"22";
 		self.changePermissionsCheckbox.state = [defaults boolForKey:@"change_permissions"];
 		self.permissionsTextField.enabled = [defaults boolForKey:@"change_permissions"];

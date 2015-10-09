@@ -54,6 +54,8 @@
 		4CCFAA7B14AA142400D4A0BD /* status_item_mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CCFAA7914AA142400D4A0BD /* status_item_mask.png */; };
 		4CFBC71D13F9AADA0043F56A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFBC71C13F9AADA0043F56A /* MainMenu.xib */; };
 		4CFBC72513F9AFE30043F56A /* MVPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFBC72413F9AFE30043F56A /* MVPreferencesController.m */; };
+		F81290A51BC7E41F0001CAE0 /* NMSSH.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = F81290A41BC7E41F0001CAE0 /* NMSSH.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F81290A61BC7E4460001CAE0 /* NMSSH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F81290A41BC7E41F0001CAE0 /* NMSSH.framework */; };
 		F8BE958616C64422001368E1 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8BE958516C64422001368E1 /* Sparkle.framework */; };
 		F8BE958916C64473001368E1 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = F8BE958516C64422001368E1 /* Sparkle.framework */; };
 		F8BE958C16C649DC001368E1 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = F8BE958B16C649DC001368E1 /* dsa_pub.pem */; };
@@ -67,6 +69,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				4C4F4BDD16C5BA42005E32A3 /* CURLHandle.framework in Copy Frameworks */,
+				F81290A51BC7E41F0001CAE0 /* NMSSH.framework in Copy Frameworks */,
 				F8BE958916C64473001368E1 /* Sparkle.framework in Copy Frameworks */,
 				4C6B0C4114A920D600E35C50 /* ShortcutRecorder.framework in Copy Frameworks */,
 				4C9F98AA1493D2BB007B80DD /* Growl.framework in Copy Frameworks */,
@@ -146,6 +149,7 @@
 		4CFBC71C13F9AADA0043F56A /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		4CFBC72313F9AFE30043F56A /* MVPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVPreferencesController.h; sourceTree = "<group>"; };
 		4CFBC72413F9AFE30043F56A /* MVPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVPreferencesController.m; sourceTree = "<group>"; };
+		F81290A41BC7E41F0001CAE0 /* NMSSH.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NMSSH.framework; sourceTree = "<group>"; };
 		F8BE958516C64422001368E1 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		F8BE958B16C649DC001368E1 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F81290A61BC7E4460001CAE0 /* NMSSH.framework in Frameworks */,
 				4C6B0C4414A925E100E35C50 /* Carbon.framework in Frameworks */,
 				4C9F98A71493C124007B80DD /* Security.framework in Frameworks */,
 				4CCC770513676313001D5C9E /* libcrypto.dylib in Frameworks */,
@@ -206,6 +211,7 @@
 		4CCC76C4136755DE001D5C9E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F81290A41BC7E41F0001CAE0 /* NMSSH.framework */,
 				F8BE958516C64422001368E1 /* Sparkle.framework */,
 				4C4F4BDB16C5BA18005E32A3 /* CURLHandle.framework */,
 				4C6B0C4214A925D600E35C50 /* Carbon.framework */,
