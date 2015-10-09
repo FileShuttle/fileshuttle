@@ -300,9 +300,10 @@
 			OSStatus returnCode = TransformProcessType(& psn,
                                                  kProcessTransformToForegroundApplication);
 			if( returnCode == 0) {
-				ProcessSerialNumber psnx = { 0, kNoProcess };
-				GetNextProcess(&psnx);
-				SetFrontProcess(&psnx);
+                NSRunningApplication* app = [NSRunningApplication
+                                             runningApplicationWithProcessIdentifier: pID];
+                [app activateWithOptions: NSApplicationActivateAllWindows];
+
 				self.showDockIcon = YES;
 				[self performSelector:@selector(setFront) withObject:nil afterDelay:0.5];
 			} else {
@@ -328,8 +329,9 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)setFront
 {
-	ProcessSerialNumber psn = { 0, kCurrentProcess };
-	SetFrontProcess(&psn);
+    NSRunningApplication* app = [NSRunningApplication
+                                 runningApplicationWithProcessIdentifier: pID];
+    [app activateWithOptions: NSApplicationActivateAllWindows];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
