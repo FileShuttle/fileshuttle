@@ -112,6 +112,19 @@
                                    defaultClipboardShortcutDic,@"clipboard_upload_shortcut",
                                    nil];
 		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+      
+      if (! [defaults boolForKey:@"importedOldDefaultsFromMV"]) {
+          // Read the old defaults from com.michaelvillar.FileShuttle
+          NSUserDefaults *oldDefaults = [NSUserDefaults new];
+          NSDictionary *oldDefaultsDict = [oldDefaults persistentDomainForName:@"com.michaelvillar.FileShuttle"];
+          
+          // Store the old defaults in the standard user defaults
+          [defaults setPersistentDomain:oldDefaultsDict forName:[[NSBundle mainBundle] bundleIdentifier]];
+          
+          // Set the flag to avoid subsequent import of old defaults
+          [defaults setBool:YES forKey:@"importedOldDefaultsFromMV"];
+      }
+      
 		[defaults registerDefaults:defaultsPrefs];
 		
 		if(![defaults boolForKey:@"dock_icon"] && ![defaults boolForKey:@"menubar_icon"])
