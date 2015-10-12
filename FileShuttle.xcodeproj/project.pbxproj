@@ -15,9 +15,9 @@
 		4C0B029716C680E200B46B9B /* status_item_mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C0B029116C680E200B46B9B /* status_item_mask@2x.png */; };
 		4C0B029816C680E200B46B9B /* status_item@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C0B029216C680E200B46B9B /* status_item@2x.png */; };
 		4C4F4BDC16C5BA18005E32A3 /* CURLHandle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C4F4BDB16C5BA18005E32A3 /* CURLHandle.framework */; };
-		4C4F4BDD16C5BA42005E32A3 /* CURLHandle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4C4F4BDB16C5BA18005E32A3 /* CURLHandle.framework */; };
+		4C4F4BDD16C5BA42005E32A3 /* CURLHandle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4C4F4BDB16C5BA18005E32A3 /* CURLHandle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		4C6B0C3F14A91FE900E35C50 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6B0C3E14A91FE900E35C50 /* ShortcutRecorder.framework */; };
-		4C6B0C4114A920D600E35C50 /* ShortcutRecorder.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6B0C3E14A91FE900E35C50 /* ShortcutRecorder.framework */; };
+		4C6B0C4114A920D600E35C50 /* ShortcutRecorder.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6B0C3E14A91FE900E35C50 /* ShortcutRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		4C6B0C4414A925E100E35C50 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6B0C4214A925D600E35C50 /* Carbon.framework */; };
 		4C6B0C4B14A9265600E35C50 /* DDHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6B0C4A14A9265600E35C50 /* DDHotKeyCenter.m */; };
 		4C6B0C5214A927F200E35C50 /* MVDictionaryKeyCombo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6B0C5114A927F200E35C50 /* MVDictionaryKeyCombo.m */; };
@@ -26,17 +26,16 @@
 		4C6CF8351497F32D002C1E14 /* status_item_error.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6CF8341497F32D002C1E14 /* status_item_error.png */; };
 		4C9F98961493AB77007B80DD /* MVFTPFileUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9F98951493AB77007B80DD /* MVFTPFileUpload.m */; };
 		4C9F989B1493ACAD007B80DD /* MVFileUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9F989A1493ACAD007B80DD /* MVFileUpload.m */; };
-		4C9F98A41493C08C007B80DD /* EMKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9F98A31493C08C007B80DD /* EMKeychainItem.m */; };
 		4C9F98A71493C124007B80DD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C9F98A51493C11E007B80DD /* Security.framework */; };
 		4C9F98A91493D273007B80DD /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C9F98A81493D273007B80DD /* Growl.framework */; };
-		4C9F98AA1493D2BB007B80DD /* Growl.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4C9F98A81493D273007B80DD /* Growl.framework */; };
+		4C9F98AA1493D2BB007B80DD /* Growl.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4C9F98A81493D273007B80DD /* Growl.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		4C9F98AC1493D398007B80DD /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 4C9F98AB1493D398007B80DD /* Growl Registration Ticket.growlRegDict */; };
 		4C9F98AE14950C32007B80DD /* status_item.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C9F98AD14950C32007B80DD /* status_item.png */; };
 		4C9F98B014950D14007B80DD /* status_item_highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C9F98AF14950D14007B80DD /* status_item_highlighted.png */; };
 		4C9F98CA14950F8D007B80DD /* status_item_completed.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C9F98BD14950F8D007B80DD /* status_item_completed.png */; };
 		4C9F98CE14951E7C007B80DD /* MVURLShortener.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9F98CD14951E7B007B80DD /* MVURLShortener.m */; };
 		4C9F98D514952069007B80DD /* RegexKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C9F98D414952069007B80DD /* RegexKit.framework */; };
-		4C9F98D6149521C7007B80DD /* RegexKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4C9F98D414952069007B80DD /* RegexKit.framework */; };
+		4C9F98D6149521C7007B80DD /* RegexKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4C9F98D414952069007B80DD /* RegexKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		4C9F98DC14952E08007B80DD /* MVZipFiles.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9F98DB14952E07007B80DD /* MVZipFiles.m */; };
 		4C9F98DF149530FA007B80DD /* MVStatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9F98DE149530F9007B80DD /* MVStatusItemView.m */; };
 		4C9F98E2149536F6007B80DD /* NSPasteboard+Files.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9F98E1149536F6007B80DD /* NSPasteboard+Files.m */; };
@@ -100,8 +99,6 @@
 		4C9F98981493ABDC007B80DD /* MVFileUploadDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVFileUploadDelegate.h; sourceTree = "<group>"; };
 		4C9F98991493ACAD007B80DD /* MVFileUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVFileUpload.h; sourceTree = "<group>"; };
 		4C9F989A1493ACAD007B80DD /* MVFileUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVFileUpload.m; sourceTree = "<group>"; };
-		4C9F98A21493C08C007B80DD /* EMKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychainItem.h; sourceTree = "<group>"; };
-		4C9F98A31493C08C007B80DD /* EMKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychainItem.m; sourceTree = "<group>"; };
 		4C9F98A51493C11E007B80DD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		4C9F98A81493D273007B80DD /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		4C9F98AB1493D398007B80DD /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
@@ -146,8 +143,8 @@
 		4CFBC72313F9AFE30043F56A /* MVPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVPreferencesController.h; sourceTree = "<group>"; };
 		4CFBC72413F9AFE30043F56A /* MVPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVPreferencesController.m; sourceTree = "<group>"; };
 		9BA9D8438E5BA6CB5A3FB2AD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		F81290A41BC7E41F0001CAE0 /* NMSSH.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NMSSH.framework; sourceTree = "<group>"; };
-		F8BE958516C64422001368E1 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		F863FE6D1BCC4231005E981E /* codesign-frameworks.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "codesign-frameworks.sh"; path = "Scripts/codesign-frameworks.sh"; sourceTree = "<group>"; };
+		F8951B011BCC479D00D088C5 /* codesign-frameworks2.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "codesign-frameworks2.sh"; path = "Scripts/codesign-frameworks2.sh"; sourceTree = "<group>"; };
 		F8BE958B16C649DC001368E1 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		FA41682C5E38D3018611D8EF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,6 +186,8 @@
 		4CCC76B6136755DD001D5C9E = {
 			isa = PBXGroup;
 			children = (
+				F8951B011BCC479D00D088C5 /* codesign-frameworks2.sh */,
+				F863FE6D1BCC4231005E981E /* codesign-frameworks.sh */,
 				4CCC76F0136756F0001D5C9E /* Classes */,
 				4CCC76FA13675A15001D5C9E /* Other classes */,
 				4CCC76CB136755DE001D5C9E /* FileShuttle */,
@@ -333,6 +332,7 @@
 				4CCC76BF136755DE001D5C9E /* Resources */,
 				4CFBC72113F9AC170043F56A /* Copy Frameworks */,
 				FDC4812D9907BAF3403655E2 /* Copy Pods Resources */,
+				F863FE6F1BCC43CD005E981E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -350,6 +350,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					4CCC76C0136755DE001D5C9E = {
+						DevelopmentTeam = UCHBT42QX3;
+					};
+				};
 			};
 			buildConfigurationList = 4CCC76BB136755DD001D5C9E /* Build configuration list for PBXProject "Fileshuttle" */;
 			compatibilityVersion = "Xcode 6.3";
@@ -410,6 +415,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		F863FE6F1BCC43CD005E981E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/Users/anthonysomerset/Sites/fileshuttle/Scripts/codesign-frameworks.sh";
 		};
 		FDC4812D9907BAF3403655E2 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -517,6 +535,7 @@
 			baseConfigurationReference = 3CA53D8A67F1523D7CD250E4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -542,6 +561,7 @@
 			baseConfigurationReference = FA41682C5E38D3018611D8EF /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
