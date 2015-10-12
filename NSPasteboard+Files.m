@@ -31,17 +31,17 @@
 		
     NSData *imageRepresentation = [[NSBitmapImageRep imageRepWithData:data]
                                    representationUsingType:NSPNGFileType
-                                   properties:nil];
+                                   properties:@{}];
 		[imageRepresentation writeToFile:path atomically:YES];
 		
 		[files addObject:path];
 	}
 	else if(type == NSFilenamesPboardType) {
-		NSString* errorDescription;
-		files = [NSPropertyListSerialization propertyListFromData:data
-												 mutabilityOption:kCFPropertyListImmutable
-														   format:nil
-												 errorDescription:&errorDescription];
+		NSError* errorDescription;
+        files = [NSPropertyListSerialization propertyListWithData:data
+                                                          options:kCFPropertyListImmutable
+                                                           format:nil
+                                                 error:&errorDescription];
 	}
 	
 	if(!files)
