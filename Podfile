@@ -3,3 +3,4 @@ xcodeproj 'Fileshuttle'
 
 pod 'Sparkle'
 pod 'NMSSH'
+pod 'AHKeychain'

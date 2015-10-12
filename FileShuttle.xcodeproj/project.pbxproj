@@ -209,8 +209,6 @@
 		4CCC76C4136755DE001D5C9E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F81290A41BC7E41F0001CAE0 /* NMSSH.framework */,
-				F8BE958516C64422001368E1 /* Sparkle.framework */,
 				4C4F4BDB16C5BA18005E32A3 /* CURLHandle.framework */,
 				4C6B0C4214A925D600E35C50 /* Carbon.framework */,
 				4C6B0C3E14A91FE900E35C50 /* ShortcutRecorder.framework */,
@@ -301,8 +299,6 @@
 				4C6CF82A1497C76D002C1E14 /* sshversion.c */,
 				4C9F98E0149536F5007B80DD /* NSPasteboard+Files.h */,
 				4C9F98E1149536F6007B80DD /* NSPasteboard+Files.m */,
-				4C9F98A21493C08C007B80DD /* EMKeychainItem.h */,
-				4C9F98A31493C08C007B80DD /* EMKeychainItem.m */,
 				4CCC76FB13675A29001D5C9E /* NSBezierPath-RoundedRect.h */,
 				4CCC76FC13675A29001D5C9E /* NSBezierPath-RoundedRect.m */,
 				4CCC77011367627A001D5C9E /* NSString+MD5.h */,
@@ -447,7 +443,6 @@
 				4CFBC72513F9AFE30043F56A /* MVPreferencesController.m in Sources */,
 				4C9F98961493AB77007B80DD /* MVFTPFileUpload.m in Sources */,
 				4C9F989B1493ACAD007B80DD /* MVFileUpload.m in Sources */,
-				4C9F98A41493C08C007B80DD /* EMKeychainItem.m in Sources */,
 				4C9F98CE14951E7C007B80DD /* MVURLShortener.m in Sources */,
 				4C9F98DC14952E08007B80DD /* MVZipFiles.m in Sources */,
 				4C9F98DF149530FA007B80DD /* MVStatusItemView.m in Sources */,

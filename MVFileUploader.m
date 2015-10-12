@@ -6,7 +6,7 @@
 //
 
 #import "MVFileUploader.h"
-#import "EMKeychainItem.h"
+#import "AHKeychain.h"
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -114,14 +114,18 @@
 	NSString *hostname = [defaults stringForKey:@"host"];
 	int port = [[defaults stringForKey:@"port"] intValue];
 	NSString *username = [defaults stringForKey:@"username"];
-	NSString *password = nil;
-	EMGenericKeychainItem *keychainItem = [EMGenericKeychainItem
-                                         genericKeychainItemForService:@"FileShuttle"
-                                         withUsername:@""];
-	if(keychainItem != nil) {
-		password = [keychainItem password];
-	}
-	
+    
+    NSString *password = @"";
+    NSError *keychainError;
+    AHKeychain *keychain = [AHKeychain loginKeychain];
+    
+    AHKeychainItem *keychainItem = [[AHKeychainItem alloc] init];
+    keychainItem.service = @"FileShuttle";
+    keychainItem.account = @"";
+    if ([keychain getItem:keychainItem error:&keychainError]) {
+        password = keychainItem.password;
+    }
+    	
 	MVFileUpload *tmpFileUpload = nil;
 	
 	if([protocol isEqualToString:@"FTP"]) {

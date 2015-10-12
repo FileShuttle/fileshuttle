@@ -72,12 +72,16 @@
                                              object:self.passwordTextField];
 	
 	NSString *password = @"";
-	EMGenericKeychainItem *keychainItem = [EMGenericKeychainItem
-                                         genericKeychainItemForService:@"FileShuttle"
-                                         withUsername:@""];
-	if(keychainItem != nil) {
-		password = [keychainItem password];
-	}
+    NSError *keychainError;
+    AHKeychain *keychain = [AHKeychain loginKeychain];
+
+    AHKeychainItem *keychainItem = [[AHKeychainItem alloc] init];
+    keychainItem.service = @"FileShuttle";
+    keychainItem.account = @"";
+    if ([keychain getItem:keychainItem error:&keychainError]) {
+        password = [keychainItem password];
+    } 
+
 	[self.passwordTextField setStringValue:password];
 	
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -281,14 +285,15 @@
 - (void)savePassword
 {
 	NSString *password = [self.passwordTextField stringValue];
-	EMGenericKeychainItem *item = [EMGenericKeychainItem genericKeychainItemForService:@"FileShuttle"
-                                                                        withUsername:@""];
-	if(item)
-		item.password = password;
-	else
-		[EMGenericKeychainItem addGenericKeychainItemForService:@"FileShuttle"
-                                               withUsername:@""
-                                                   password:password];
+    NSError *keychainError;
+    AHKeychain *keychain = [AHKeychain loginKeychain];
+    AHKeychainItem *item = [[AHKeychainItem alloc] init];
+    item.service = @"FileShuttle";
+    item.account = @"";
+    item.password = password;
+    
+    [keychain saveItem:item error:&keychainError];
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
