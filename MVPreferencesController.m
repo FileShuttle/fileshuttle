@@ -318,11 +318,21 @@
 			[alert setMessageText:@"You must now restart"];
 			[alert setInformativeText:@"This change requires to restart the application"];
 			[alert setAlertStyle:NSWarningAlertStyle];
-			[alert beginSheetModalForWindow:self.window
-                        modalDelegate:self
-                       didEndSelector:@selector(restartDialogDidEnd:returnCode:contextInfo:)
-                          contextInfo:nil];
-		}
+
+            [alert beginSheetModalForWindow: self.window completionHandler: ^(NSInteger returnCode){
+                if (returnCode==NSAlertFirstButtonReturn) {
+                    [NSTask launchedTaskWithLaunchPath:@"/bin/sh"
+                                             arguments:[NSArray arrayWithObjects:@"-c",
+                                                        [NSString stringWithFormat:
+                                                         @"sleep 1 ; /usr/bin/open '%@'",
+                                                         [[NSBundle mainBundle] bundlePath]],
+                                                        nil]];
+                    [NSApp terminate:self];
+                }
+            }
+             ];
+
+        }
 	}
 }
 
@@ -360,23 +370,6 @@
   }
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)restartDialogDidEnd:(NSAlert *)alert
-                 returnCode:(NSInteger)returnCode
-                contextInfo:(void *)contextInfo
-{
-	// Not quite sure why we can't directly execute outselves, but
-	// we seem to require the open command to make it work
-	[NSTask launchedTaskWithLaunchPath:@"/bin/sh"
-                           arguments:[NSArray arrayWithObjects:@"-c",
-                                      [NSString stringWithFormat:
-                                       @"sleep 1 ; /usr/bin/open '%@'",
-                                       [[NSBundle mainBundle] bundlePath]],
-                                      nil]];
-	[NSApp terminate:self];
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark -
 #pragma mark Launch At Login helper Methods
