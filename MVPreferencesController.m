@@ -398,7 +398,7 @@
 	CFArrayRef loginItemsArray = LSSharedFileListCopySnapshot(theLoginItemsRefs, &seedValue);
 	for (id item in (NSArray *)loginItemsArray) {
 		LSSharedFileListItemRef itemRef = (LSSharedFileListItemRef)item;
-		if (LSSharedFileListItemResolve(itemRef, 0, (CFURLRef*) &thePath, NULL) == noErr) {
+        if (LSSharedFileListItemCopyResolvedURL(itemRef, 0, NULL) == noErr) {
 			if ([[(NSURL *)thePath path] hasPrefix:appPath]) {
 				LSSharedFileListItemRemove(theLoginItemsRefs, itemRef); // Deleting the item
 			}
@@ -423,8 +423,8 @@
 	CFArrayRef loginItemsArray = LSSharedFileListCopySnapshot(theLoginItemsRefs, &seedValue);
 	for (id item in (NSArray *)loginItemsArray) {
 		LSSharedFileListItemRef itemRef = (LSSharedFileListItemRef)item;
-		if (LSSharedFileListItemResolve(itemRef, 0, (CFURLRef*) &thePath, NULL) == noErr) {
-			if ([[(NSURL *)thePath path] hasPrefix:appPath]) {
+        if (LSSharedFileListItemCopyResolvedURL(itemRef, 0, NULL) == noErr) {
+            if ([[(NSURL *)thePath path] hasPrefix:appPath]) {
 				found = YES;
 				break;
 			}
