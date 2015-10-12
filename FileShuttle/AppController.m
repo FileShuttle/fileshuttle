@@ -278,10 +278,12 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)openPreferences
 {
-	[self.preferencesWindow makeKeyAndOrderFront:self];
-	ProcessSerialNumber psn = { 0, kCurrentProcess };
-	SetFrontProcess(&psn);
+
+    [NSApp activateIgnoringOtherApps:YES];
+    [self.preferencesWindow makeKeyAndOrderFront:self];
+
 }
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)quit
