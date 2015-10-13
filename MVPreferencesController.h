@@ -19,6 +19,7 @@
 	NSPopUpButton *showInPopUpButton_;
 	SRRecorderControl *clipboardRecorderControl_;
     NSPopUpButton *setFilenamePopUpButton;
+    NSPopUpButton *shortenerSelectionPopUpButton;
 }
 
 @property (assign) IBOutlet NSWindow *window;
@@ -32,6 +33,9 @@
 @property (assign) IBOutlet NSButton *changePermissionsCheckbox;
 @property (assign) IBOutlet NSTextField *permissionsTextField;
 @property (assign) IBOutlet SRRecorderControl *clipboardRecorderControl;
+@property (assign) IBOutlet NSButton *enableShortenerCheckbox;
+@property (assign) IBOutlet NSPopUpButton *shortenerSelectionPopUpButton;
+@property (assign) IBOutlet NSTextField *shortenerApiTokenField;
 
 - (IBAction)toolbarItemAction:(id)sender;
 - (IBAction)protocolChanged:(id)sender;
@@ -39,5 +43,8 @@
 - (IBAction)showInPopUpButtonChanged:(id)sender;
 - (IBAction)setFilenamePopUpButtonChanged:(id)sender;
 - (IBAction)changePermissionsCheckboxChanged:(id)sender;
+- (IBAction)shortenerSelectionPopUpButtonChanged:(id)sender;
+- (IBAction)shortenerApiTokenChanged:(id)sender;
+- (IBAction)enableShortenerCheckboxChanged:(id)sender;
 
 @end

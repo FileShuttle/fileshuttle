@@ -925,11 +925,70 @@ CQ
             <point key="canvasLocation" x="657.5" y="-116"/>
         </view>
         <view id="zxt-BZ-cJf">
-            <rect key="frame" x="0.0" y="0.0" width="343" height="338"/>
+            <rect key="frame" x="0.0" y="0.0" width="343" height="105"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
+                <popUpButton verticalHuggingPriority="750" id="8bW-nh-6NB">
+                    <rect key="frame" x="123" y="39" width="170" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
+                    <popUpButtonCell key="cell" type="push" title="is.gd" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="EVk-EC-1CH" id="Msl-Oz-Tzv">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="Z6x-i1-zaI">
+                            <items>
+                                <menuItem title="is.gd" state="on" id="EVk-EC-1CH"/>
+                                <menuItem title="v.gd" tag="1" id="dLF-PM-d0p"/>
+                                <menuItem title="bit.ly" tag="2" id="Fcq-EN-785"/>
+                                <menuItem title="j.mp" tag="3" id="KiW-Us-fRA"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <action selector="shortenerSelectionPopUpButtonChanged:" target="861" id="ydh-Nu-9gv"/>
+                        <binding destination="606" name="selectedTag" keyPath="values.selected_shortener" id="xc8-cA-RLh">
+                            <dictionary key="options">
+                                <bool key="NSValidatesImmediately" value="YES"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </popUpButton>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="ukZ-IA-G1e">
+                    <rect key="frame" x="54" y="45" width="69" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Shortener:" id="7n7-Qa-gaB">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="4qB-6k-HbP">
+                    <rect key="frame" x="54" y="20" width="54" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="API Key:" id="gIP-po-RUF">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" id="DRB-h3-Ai5">
+                    <rect key="frame" x="125" y="15" width="165" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="eWb-Qk-7nz">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="shortenerApiTokenChanged:" target="861" id="zHZ-lv-cVR"/>
+                        <binding destination="606" name="value" keyPath="values.api_shortener_token" id="ATX-Jd-XKy"/>
+                    </connections>
+                </textField>
                 <button id="1016">
-                    <rect key="frame" x="54" y="302" width="234" height="18"/>
+                    <rect key="frame" x="123" y="69" width="234" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <animations/>
                     <buttonCell key="cell" type="check" title="Shorten URLs" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1035">
@@ -937,6 +996,7 @@ CQ
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
+                        <action selector="enableShortenerCheckboxChanged:" target="861" id="h3I-Dm-PcA"/>
                         <binding destination="606" name="value" keyPath="values.url_shortener" id="1038">
                             <dictionary key="options">
                                 <integer key="NSMultipleValuesPlaceholder" value="1"/>
@@ -949,17 +1009,20 @@ CQ
                 </button>
             </subviews>
             <animations/>
-            <point key="canvasLocation" x="248.5" y="-120"/>
+            <point key="canvasLocation" x="248.5" y="-236.5"/>
         </view>
         <customObject id="861" customClass="MVPreferencesController">
             <connections>
                 <outlet property="changePermissionsCheckbox" destination="acV-LA-g0x" id="WQI-hd-39D"/>
                 <outlet property="clipboardRecorderControl" destination="1062" id="1067"/>
                 <outlet property="connectionView" destination="1135" id="1134"/>
+                <outlet property="enableShortenerCheckbox" destination="1016" id="AFp-fb-Yjl"/>
                 <outlet property="generalView" destination="1070" id="1180"/>
                 <outlet property="passwordTextField" destination="1139" id="1181"/>
                 <outlet property="permissionsTextField" destination="ga9-B4-SiG" id="Jg3-Jc-Kw5"/>
                 <outlet property="setFilenamePopUpButton" destination="1197" id="1204"/>
+                <outlet property="shortenerApiTokenField" destination="DRB-h3-Ai5" id="IfA-lh-IDg"/>
+                <outlet property="shortenerSelectionPopUpButton" destination="8bW-nh-6NB" id="nbp-IE-hH3"/>
                 <outlet property="showInPopUpButton" destination="1020" id="1042"/>
                 <outlet property="toolbar" destination="1071" id="1086"/>
                 <outlet property="urlshorteningView" destination="zxt-BZ-cJf" id="DWx-jS-opf"/>

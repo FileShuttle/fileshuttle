@@ -59,6 +59,8 @@
             urlshorteningView           = urlshorteningView_,
             connectionView              = connectionView_,
             showInPopUpButton           = showInPopUpButton_,
+            shortenerSelectionPopUpButton        = shortenerSelectionPopUpButton_,
+            shortenerApiTokenField       = shortenerApiTokenField_,
             setFilenamePopUpButton      = setFilenamePopUpButton_,
             clipboardRecorderControl	= clipboardRecorderControl_,
             selectedIdentifier          = selectedIdentifier_,
@@ -122,6 +124,27 @@
 	}
 	else
 		[self.setFilenamePopUpButton selectItemWithTag:0];
+    
+    if([defaults boolForKey:@"url_shortener"]) {
+        [self.shortenerSelectionPopUpButton setEnabled:YES];
+    } else {
+        [self.shortenerSelectionPopUpButton setEnabled:NO];
+    }
+
+        if([defaults integerForKey:@"selected_shortener"]) {
+                [self.shortenerSelectionPopUpButton selectItemWithTag:[defaults integerForKey:@"selected_shortener"]];
+            NSInteger tag = [self.shortenerSelectionPopUpButton selectedTag];
+            // If shortener selected is bit.ly or j.mp ask for API key.
+            if(tag == 2 || tag == 3) {
+                [shortenerApiTokenField_ setEnabled:YES];
+            } else {
+                [shortenerApiTokenField_ setEnabled:NO];
+            }
+        }
+        if([defaults objectForKey:@"api_shortener_token"]) {
+                [self.shortenerApiTokenField setStringValue:[defaults objectForKey:@"api_shortener_token"]];
+                [self.shortenerApiTokenField setEnabled:YES];
+            }
 
 	NSString *protocol = [defaults valueForKey:@"protocol"];
 	if([protocol compare:@"SFTP"] == NSOrderedSame || [protocol compare:@"SCP"] == NSOrderedSame) {
@@ -240,7 +263,43 @@
 		[defaults setBool:YES forKey:@"use_hash"];
 	}
 }
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (IBAction)shortenerSelectionPopUpButtonChanged:(id)sender {
+        NSInteger tag = [self.shortenerSelectionPopUpButton selectedTag];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setInteger:tag forKey:@"selected_shortener"];
+        // If shortener selected is bit.ly or j.mp ask for API key.
+        if(tag == 2 || tag == 3) {
+                [shortenerApiTokenField_ setEnabled:YES];
+            } else {
+                    [shortenerApiTokenField_ setEnabled:NO];
+                }
+    }
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)saveApiKey {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString *key = [shortenerApiTokenField_ stringValue];
+        [defaults setObject:key forKey:@"api_shortener_token"];
+    }
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (IBAction)shortenerApiTokenChanged:(id)sender {
+        [self saveApiKey];
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (IBAction)enableShortenerCheckboxChanged:(id)sender
+{
+    NSButton *checkbox = sender;
+    BOOL enableShortener = checkbox.state == NSOnState;
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:enableShortener forKey:@"url_shortener"];
+    
+    self.shortenerSelectionPopUpButton.enabled = enableShortener;
 
+    if (enableShortener) {
+        [self.shortenerSelectionPopUpButton becomeFirstResponder];
+    }
+}
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (IBAction)changePermissionsCheckboxChanged:(id)sender
 {
