@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13A598" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8191" systemVersion="15A279b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
-        <deployment defaultVersion="1060" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -11,7 +10,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <menu title="AMainMenu" systemMenu="main" id="29">
             <items>
                 <menuItem title="FileShuttle" id="56">
@@ -351,39 +350,44 @@
             </items>
         </menu>
         <customObject id="420" customClass="NSFontManager"/>
-        <window title="General" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="546">
+        <window title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="546">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" bottomStrut="YES"/>
             <rect key="contentRect" x="491" y="301" width="338" height="282"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="547">
                 <rect key="frame" x="0.0" y="0.0" width="338" height="282"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <animations/>
             </view>
             <toolbar key="toolbar" implicitIdentifier="5864765F-EEEB-44E2-AB73-044FB49EC0A6" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="1071">
                 <allowedToolbarItems>
                     <toolbarItem implicitItemIdentifier="136EEC13-B327-4C32-8ED5-C3C536726B8B" explicitItemIdentifier="general" label="General" paletteLabel="General" tag="-1" image="NSPreferencesGeneral" selectable="YES" id="1078">
                         <connections>
-                            <action selector="toolbarItemAction:" target="861" id="1082"/>
+                            <action selector="toolbarItemAction:" target="861" id="iFg-fg-Mfo"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="2F09371D-30A9-4FB6-A41D-B9A4D6A0745A" explicitItemIdentifier="advanced" label="Advanced" paletteLabel="Advanced" tag="-1" image="NSAdvanced" selectable="YES" id="1077">
+                    <toolbarItem implicitItemIdentifier="2F09371D-30A9-4FB6-A41D-B9A4D6A0745A" explicitItemIdentifier="urlshortening" label="URL Shortening" paletteLabel="URL Shortening" tag="-1" image="NSAdvanced" selectable="YES" id="1077">
                         <connections>
                             <action selector="toolbarItemAction:" target="861" id="1083"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="D9B47F5F-40FA-4E22-8C24-398AFFF50A85" explicitItemIdentifier="connection" label="Connection Settings" paletteLabel="Connection Settings" tag="-1" image="NSNetwork" selectable="YES" id="ocQ-e1-i57">
+                        <connections>
+                            <action selector="toolbarItemAction:" target="861" id="s9k-iD-M9U"/>
                         </connections>
                     </toolbarItem>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
                     <toolbarItem reference="1078"/>
+                    <toolbarItem reference="ocQ-e1-i57"/>
                     <toolbarItem reference="1077"/>
                 </defaultToolbarItems>
                 <connections>
                     <outlet property="delegate" destination="861" id="1080"/>
                 </connections>
             </toolbar>
-            <connections>
-                <outlet property="delegate" destination="861" id="1046"/>
-            </connections>
+            <point key="canvasLocation" x="-230" y="-88"/>
         </window>
         <userDefaultsController representsSharedInstance="YES" id="606"/>
         <customObject id="860" customClass="AppController">
@@ -398,6 +402,7 @@
                 <textField verticalHuggingPriority="750" id="1151">
                     <rect key="frame" x="-2" y="273" width="97" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Host:" id="1152">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -407,6 +412,7 @@
                 <textField verticalHuggingPriority="750" id="1150">
                     <rect key="frame" x="-3" y="298" width="97" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Protocol:" id="1153">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -416,6 +422,7 @@
                 <textField verticalHuggingPriority="750" id="1149">
                     <rect key="frame" x="99" y="270" width="133" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="example.com" drawsBackground="YES" id="1154">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -433,6 +440,7 @@
                 <textField verticalHuggingPriority="750" id="1148">
                     <rect key="frame" x="237" y="273" width="44" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Port:" id="1155">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -442,6 +450,7 @@
                 <textField verticalHuggingPriority="750" id="1147">
                     <rect key="frame" x="285" y="270" width="33" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="1156">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -459,6 +468,7 @@
                 <textField verticalHuggingPriority="750" id="1146">
                     <rect key="frame" x="-2" y="246" width="97" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Username:" id="1157">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -468,6 +478,7 @@
                 <textField verticalHuggingPriority="750" id="1145">
                     <rect key="frame" x="99" y="243" width="219" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="1158">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -485,6 +496,7 @@
                 <textField verticalHuggingPriority="750" id="1144">
                     <rect key="frame" x="-2" y="219" width="97" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Password:" id="1159">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -494,6 +506,7 @@
                 <textField verticalHuggingPriority="750" id="1143">
                     <rect key="frame" x="-2" y="180" width="97" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Path:" id="1160">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -503,6 +516,7 @@
                 <textField verticalHuggingPriority="750" id="1142">
                     <rect key="frame" x="99" y="177" width="219" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="/" drawsBackground="YES" id="1161">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -520,6 +534,7 @@
                 <textField verticalHuggingPriority="750" id="1141">
                     <rect key="frame" x="-2" y="112" width="97" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="URL:" id="1162">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -529,6 +544,7 @@
                 <textField verticalHuggingPriority="750" id="1140">
                     <rect key="frame" x="99" y="109" width="219" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="http://example.com/files/" drawsBackground="YES" id="1163">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -546,6 +562,7 @@
                 <secureTextField verticalHuggingPriority="750" id="1139">
                     <rect key="frame" x="99" y="216" width="219" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                     <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="1164">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -561,15 +578,22 @@
                 <popUpButton verticalHuggingPriority="750" id="1138">
                     <rect key="frame" x="96" y="294" width="225" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" title="FTP" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="1165">
+                    <animations/>
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="1165">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="menu"/>
                         <menu key="menu" title="OtherViews" id="1166">
                             <items>
-                                <menuItem title="FTP" state="on" id="1167">
+                                <menuItem title="FTP" id="1167">
                                     <attributedString key="attributedTitle"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+CQ
+</string>
                                 </menuItem>
-                                <menuItem title="SFTP" id="1168">
+                                <menuItem title="SCP" id="1168">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="SFTP" id="Vq5-fS-Wac">
                                     <modifierMask key="keyEquivalentModifierMask"/>
                                 </menuItem>
                             </items>
@@ -595,6 +619,7 @@
                 <textField verticalHuggingPriority="750" id="1137">
                     <rect key="frame" x="98" y="139" width="219" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="The path on the server where your files will be uploaded." id="1169">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" red="0.50591856239999999" green="0.50591856239999999" blue="0.50591856239999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -604,6 +629,7 @@
                 <textField verticalHuggingPriority="750" id="1136">
                     <rect key="frame" x="98" y="72" width="219" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="URL to serve your files. It should be configured to your upload folder." id="1170">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" red="0.50591856239999999" green="0.50591856239999999" blue="0.50591856239999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -613,6 +639,7 @@
                 <button id="acV-LA-g0x">
                     <rect key="frame" x="96" y="48" width="221" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                     <buttonCell key="cell" type="check" title="Change file permissions" bezelStyle="regularSquare" imagePosition="left" inset="2" id="ywR-ma-FsE">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -624,6 +651,7 @@
                 <textField verticalHuggingPriority="750" id="ga9-B4-SiG">
                     <rect key="frame" x="98" y="20" width="220" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="644" drawsBackground="YES" id="Hux-0n-vUt">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -639,32 +667,17 @@
                     </connections>
                 </textField>
             </subviews>
+            <animations/>
+            <point key="canvasLocation" x="248" y="264"/>
         </view>
         <view id="1070">
-            <rect key="frame" x="0.0" y="0.0" width="343" height="322"/>
+            <rect key="frame" x="0.0" y="0.0" width="343" height="338"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <button id="1016">
-                    <rect key="frame" x="91" y="125" width="234" height="18"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="check" title="Shorten URLs" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1035">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <binding destination="606" name="value" keyPath="values.url_shortener" id="1038">
-                            <dictionary key="options">
-                                <integer key="NSNotApplicablePlaceholder" value="1"/>
-                                <integer key="NSNoSelectionPlaceholder" value="1"/>
-                                <integer key="NSMultipleValuesPlaceholder" value="1"/>
-                                <integer key="NSNullPlaceholder" value="1"/>
-                            </dictionary>
-                        </binding>
-                    </connections>
-                </button>
                 <button id="1063">
-                    <rect key="frame" x="91" y="103" width="234" height="18"/>
+                    <rect key="frame" x="91" y="143" width="234" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                     <buttonCell key="cell" type="check" title="Upload clipboard content with:" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1064">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -672,17 +685,18 @@
                     <connections>
                         <binding destination="606" name="value" keyPath="values.clipboard_upload" id="1066">
                             <dictionary key="options">
-                                <integer key="NSNotApplicablePlaceholder" value="1"/>
-                                <integer key="NSNoSelectionPlaceholder" value="1"/>
                                 <integer key="NSMultipleValuesPlaceholder" value="1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="1"/>
                                 <integer key="NSNullPlaceholder" value="1"/>
                             </dictionary>
                         </binding>
                     </connections>
                 </button>
                 <button id="1017">
-                    <rect key="frame" x="91" y="169" width="234" height="18"/>
+                    <rect key="frame" x="91" y="185" width="234" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                     <buttonCell key="cell" type="check" title="Autoupload screenshots" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1034">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -690,17 +704,18 @@
                     <connections>
                         <binding destination="606" name="value" keyPath="values.upload_screenshots" id="1037">
                             <dictionary key="options">
-                                <integer key="NSNotApplicablePlaceholder" value="1"/>
-                                <integer key="NSNoSelectionPlaceholder" value="1"/>
                                 <integer key="NSMultipleValuesPlaceholder" value="1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="1"/>
                                 <integer key="NSNullPlaceholder" value="1"/>
                             </dictionary>
                         </binding>
                     </connections>
                 </button>
                 <button id="1018">
-                    <rect key="frame" x="91" y="286" width="234" height="18"/>
+                    <rect key="frame" x="91" y="302" width="234" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                     <buttonCell key="cell" type="check" title="Launch at login" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1033">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -708,17 +723,18 @@
                     <connections>
                         <binding destination="606" name="value" keyPath="values.launch_at_login" id="1040">
                             <dictionary key="options">
-                                <integer key="NSNotApplicablePlaceholder" value="1"/>
-                                <integer key="NSNoSelectionPlaceholder" value="1"/>
                                 <integer key="NSMultipleValuesPlaceholder" value="1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="1"/>
                                 <integer key="NSNullPlaceholder" value="1"/>
                             </dictionary>
                         </binding>
                     </connections>
                 </button>
                 <button id="1019">
-                    <rect key="frame" x="91" y="224" width="234" height="18"/>
+                    <rect key="frame" x="91" y="240" width="234" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                     <buttonCell key="cell" type="check" title="Growl notifications" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1032">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -726,23 +742,24 @@
                     <connections>
                         <binding destination="606" name="value" keyPath="values.growl" id="1039">
                             <dictionary key="options">
-                                <integer key="NSNotApplicablePlaceholder" value="1"/>
-                                <integer key="NSNoSelectionPlaceholder" value="1"/>
                                 <integer key="NSMultipleValuesPlaceholder" value="1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="1"/>
                                 <integer key="NSNullPlaceholder" value="1"/>
                             </dictionary>
                         </binding>
                     </connections>
                 </button>
                 <popUpButton verticalHuggingPriority="750" id="1020">
-                    <rect key="frame" x="90" y="246" width="160" height="26"/>
+                    <rect key="frame" x="90" y="262" width="160" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" title="Menu bar" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="1027">
+                    <animations/>
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="1027">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="menu"/>
                         <menu key="menu" title="OtherViews" id="1028">
                             <items>
-                                <menuItem title="Menu bar" state="on" id="1031"/>
+                                <menuItem title="Menu bar" id="1031"/>
                                 <menuItem title="Dock" tag="1" id="1030"/>
                                 <menuItem title="Menu bar + Dock" tag="2" id="1029"/>
                             </items>
@@ -753,8 +770,9 @@
                     </connections>
                 </popUpButton>
                 <textField verticalHuggingPriority="750" id="1021">
-                    <rect key="frame" x="13" y="287" width="73" height="17"/>
+                    <rect key="frame" x="13" y="303" width="73" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Startup:" id="1026">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -762,8 +780,9 @@
                     </textFieldCell>
                 </textField>
                 <textField verticalHuggingPriority="750" id="1022">
-                    <rect key="frame" x="13" y="252" width="73" height="17"/>
+                    <rect key="frame" x="13" y="268" width="73" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Show:" id="1025">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -771,8 +790,9 @@
                     </textFieldCell>
                 </textField>
                 <textField verticalHuggingPriority="750" id="1023">
-                    <rect key="frame" x="13" y="199" width="73" height="17"/>
+                    <rect key="frame" x="13" y="215" width="73" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Filename:" id="1024">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -780,8 +800,9 @@
                     </textFieldCell>
                 </textField>
                 <textField verticalHuggingPriority="750" id="1182">
-                    <rect key="frame" x="21" y="170" width="65" height="17"/>
+                    <rect key="frame" x="21" y="186" width="65" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Uploads:" id="1183">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -789,15 +810,17 @@
                     </textFieldCell>
                 </textField>
                 <customView id="1062" customClass="SRRecorderControl">
-                    <rect key="frame" x="111" y="75" width="136" height="22"/>
+                    <rect key="frame" x="111" y="115" width="136" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                 </customView>
                 <popUpButton verticalHuggingPriority="750" id="1197">
-                    <rect key="frame" x="90" y="193" width="160" height="26"/>
+                    <rect key="frame" x="90" y="209" width="160" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                     <popUpButtonCell key="cell" type="push" title="Original Filename" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="1200" id="1198">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="menu"/>
                         <menu key="menu" title="OtherViews" id="1199">
                             <items>
                                 <menuItem title="Original Filename" state="on" id="1200"/>
@@ -810,40 +833,10 @@
                         <action selector="setFilenamePopUpButtonChanged:" target="861" id="1205"/>
                     </connections>
                 </popUpButton>
-                <textField verticalHuggingPriority="750" id="1211">
-                    <rect key="frame" x="26" y="48" width="60" height="17"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Updates:" id="1212">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <button id="1213">
-                    <rect key="frame" x="91" y="46" width="231" height="18"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="check" title="Automatically Check For Updates" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="1214">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <binding destination="1206" name="value" keyPath="automaticallyChecksForUpdates" id="1219"/>
-                    </connections>
-                </button>
-                <button verticalHuggingPriority="750" id="1220">
-                    <rect key="frame" x="87" y="13" width="111" height="32"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="push" title="Check Now" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1221">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="checkForUpdates:" target="1206" id="1222"/>
-                    </connections>
-                </button>
                 <button id="1223">
-                    <rect key="frame" x="91" y="147" width="234" height="18"/>
+                    <rect key="frame" x="91" y="163" width="234" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
                     <buttonCell key="cell" type="check" title="Delete screenshots after upload" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1224">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -851,27 +844,125 @@
                     <connections>
                         <binding destination="606" name="value" keyPath="values.delete_screenshots" id="1230">
                             <dictionary key="options">
-                                <integer key="NSNotApplicablePlaceholder" value="1"/>
-                                <integer key="NSNoSelectionPlaceholder" value="1"/>
                                 <integer key="NSMultipleValuesPlaceholder" value="1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="1"/>
+                                <integer key="NSNullPlaceholder" value="1"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+                <textField verticalHuggingPriority="750" id="TyQ-ek-Hhe">
+                    <rect key="frame" x="26" y="89" width="60" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Updates:" id="kno-LR-JLV">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button id="Jet-c5-TEq">
+                    <rect key="frame" x="90" y="88" width="231" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
+                    <buttonCell key="cell" type="check" title="Automatically Check For Updates" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="2rq-VB-1va">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="1206" name="value" keyPath="automaticallyChecksForUpdates" id="uDN-Qg-6dt"/>
+                        <binding destination="1206" name="enabled" keyPath="automaticallyChecksForUpdates" id="TDY-EZ-0fz"/>
+                    </connections>
+                </button>
+                <button id="g4q-pf-Hp4">
+                    <rect key="frame" x="90" y="68" width="231" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
+                    <buttonCell key="cell" type="check" title="Automatically Download Updates" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="h7D-g4-Okf">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="1206" name="enabled" keyPath="automaticallyDownloadsUpdates" id="Lzf-lx-RNf"/>
+                        <binding destination="1206" name="value" keyPath="automaticallyChecksForUpdates" id="RKA-SS-6te"/>
+                    </connections>
+                </button>
+                <popUpButton verticalHuggingPriority="750" id="CYp-0M-JOE">
+                    <rect key="frame" x="91" y="38" width="122" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
+                    <popUpButtonCell key="cell" type="push" title="Daily" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="86400" imageScaling="proportionallyDown" inset="2" selectedItem="Fvf-V3-iap" id="nUm-kJ-qKB">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="as5-iT-qVl">
+                            <items>
+                                <menuItem title="Daily" state="on" tag="86400" id="Fvf-V3-iap"/>
+                                <menuItem title="Weekly" tag="604800" id="I77-lm-qdO"/>
+                                <menuItem title="Monthly" tag="2629800" id="D4Q-9f-Pug"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <binding destination="1206" name="enabled" keyPath="automaticallyChecksForUpdates" id="KxU-Xd-aBm"/>
+                        <binding destination="1206" name="selectedTag" keyPath="updateCheckInterval" id="IQR-ub-Qcd"/>
+                    </connections>
+                </popUpButton>
+                <button verticalHuggingPriority="750" id="qY0-uT-tyg">
+                    <rect key="frame" x="87" y="6" width="129" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
+                    <buttonCell key="cell" type="push" title="Check Now" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YWo-Hy-Uc4">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="checkForUpdates:" target="1206" id="9xB-8e-DZw"/>
+                    </connections>
+                </button>
+            </subviews>
+            <animations/>
+            <point key="canvasLocation" x="657.5" y="-116"/>
+        </view>
+        <view id="zxt-BZ-cJf">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="338"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <button id="1016">
+                    <rect key="frame" x="54" y="302" width="234" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
+                    <buttonCell key="cell" type="check" title="Shorten URLs" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1035">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="606" name="value" keyPath="values.url_shortener" id="1038">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="1"/>
                                 <integer key="NSNullPlaceholder" value="1"/>
                             </dictionary>
                         </binding>
                     </connections>
                 </button>
             </subviews>
+            <animations/>
+            <point key="canvasLocation" x="248.5" y="-120"/>
         </view>
         <customObject id="861" customClass="MVPreferencesController">
             <connections>
-                <outlet property="advancedView" destination="1070" id="1134"/>
                 <outlet property="changePermissionsCheckbox" destination="acV-LA-g0x" id="WQI-hd-39D"/>
                 <outlet property="clipboardRecorderControl" destination="1062" id="1067"/>
-                <outlet property="generalView" destination="1135" id="1180"/>
+                <outlet property="connectionView" destination="1135" id="1134"/>
+                <outlet property="generalView" destination="1070" id="1180"/>
                 <outlet property="passwordTextField" destination="1139" id="1181"/>
                 <outlet property="permissionsTextField" destination="ga9-B4-SiG" id="Jg3-Jc-Kw5"/>
                 <outlet property="setFilenamePopUpButton" destination="1197" id="1204"/>
                 <outlet property="showInPopUpButton" destination="1020" id="1042"/>
                 <outlet property="toolbar" destination="1071" id="1086"/>
+                <outlet property="urlshorteningView" destination="zxt-BZ-cJf" id="DWx-jS-opf"/>
                 <outlet property="window" destination="546" id="1087"/>
             </connections>
         </customObject>
@@ -879,6 +970,7 @@
     </objects>
     <resources>
         <image name="NSAdvanced" width="32" height="32"/>
+        <image name="NSNetwork" width="32" height="32"/>
         <image name="NSPreferencesGeneral" width="32" height="32"/>
     </resources>
 </document>

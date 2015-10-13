@@ -6,11 +6,13 @@
 //
 
 #import "MVPreferencesController.h"
-#import "EMKeychainItem.h"
+#import "AHKeychain.h"
 #import "MVDictionaryKeyCombo.h"
 
 #define kMVGeneralIdentifier @"general"
-#define kMVAdvancedIdentifier @"advanced"
+#define kMVurlshorteningIdentifier @"urlshortening"
+#define kMVConnectionIdentifier @"connection"
+
 
 #define kMVTopMargin 78
 
@@ -54,7 +56,8 @@
             window                      = window_,
             toolbar                     = toolbar_,
             generalView                 = generalView_,
-            advancedView                = advancedView_,
+            urlshorteningView           = urlshorteningView_,
+            connectionView              = connectionView_,
             showInPopUpButton           = showInPopUpButton_,
             setFilenamePopUpButton      = setFilenamePopUpButton_,
             clipboardRecorderControl	= clipboardRecorderControl_,
@@ -355,8 +358,10 @@
   NSView *nextView = nil;
   if([self.selectedIdentifier isEqualToString:kMVGeneralIdentifier])
     nextView = self.generalView;
-  else if([self.selectedIdentifier isEqualToString:kMVAdvancedIdentifier])
-    nextView = self.advancedView;
+  else if([self.selectedIdentifier isEqualToString:kMVurlshorteningIdentifier])
+    nextView = self.urlshorteningView;
+  else if([self.selectedIdentifier isEqualToString:kMVConnectionIdentifier])
+      nextView = self.connectionView;
   
   if(nextView != self.selectedView)
   {

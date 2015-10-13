@@ -24,7 +24,8 @@
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSToolbar *toolbar;
 @property (assign) IBOutlet NSView *generalView;
-@property (assign) IBOutlet NSView *advancedView;
+@property (assign) IBOutlet NSView *connectionView;
+@property (assign) IBOutlet NSView *urlshorteningView;
 @property (assign) IBOutlet NSSecureTextField *passwordTextField;
 @property (assign) IBOutlet NSPopUpButton *showInPopUpButton;
 @property (assign) IBOutlet NSPopUpButton *setFilenamePopUpButton;
