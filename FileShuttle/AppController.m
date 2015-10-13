@@ -344,26 +344,14 @@
         {
             NSString *title = @"Upload failed";
             NSString *description = @"Please check your connection configuration";
-            NSString *notificationName = @"Bad configuration";
-            
-            if(NSClassFromString(@"NSUserNotification"))
-            {
-                NSUserNotification *notification = [NSUserNotification new];
-                notification.hasActionButton = NO;
-                notification.title = title;
-                notification.informativeText = description;
-                [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:notification];
-            }
-            else
-            {
-                [GrowlApplicationBridge notifyWithTitle:title
-                                            description:description
-                                       notificationName:notificationName
-                                               iconData:self.originalDockImageData
-                                               priority:0
-                                               isSticky:FALSE
-                                           clickContext:nil];
-            }
+
+            NSUserNotification *notification = [NSUserNotification new];
+            notification.hasActionButton = NO;
+            notification.title = title;
+            notification.informativeText = description;
+            [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:notification];
+
+
         }
         
 		return;
@@ -555,26 +543,14 @@
     {
         NSString *title = @"Paste it!";
         NSString *description = @"The URL has been written into your pasteboard";
-        NSString *notificationName = @"URL copied";
         
-        if(NSClassFromString(@"NSUserNotification"))
-        {
-            NSUserNotification *notification = [NSUserNotification new];
-            notification.hasActionButton = NO;
-            notification.title = title;
-            notification.informativeText = description;
-            [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:notification];
-        }
-        else
-        {
-            [GrowlApplicationBridge notifyWithTitle:title
-                                        description:description
-                                   notificationName:notificationName
-                                           iconData:self.originalDockImageData
-                                           priority:0
-                                           isSticky:FALSE
-                                       clickContext:nil];
-        }
+        NSUserNotification *notification = [NSUserNotification new];
+        notification.hasActionButton = NO;
+        notification.title = title;
+        notification.informativeText = description;
+        [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:notification];
+
+
     }
 	
 	[self displayCompletedIcons];
@@ -622,26 +598,14 @@
     {
         NSString *title = @"Upload failed";
         NSString *description = @"Please check your connection configuration and internet connection.";
-        NSString *notificationName = @"Bad configuration";
-        
-        if(NSClassFromString(@"NSUserNotification"))
-        {
-            NSUserNotification *notification = [NSUserNotification new];
-            notification.hasActionButton = NO;
-            notification.title = title;
-            notification.informativeText = description;
-            [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:notification];
-        }
-        else
-        {
-            [GrowlApplicationBridge notifyWithTitle:title
-                                        description:description
-                                   notificationName:notificationName
-                                           iconData:self.originalDockImageData
-                                           priority:0
-                                           isSticky:FALSE
-                                       clickContext:nil];
-        }
+
+        NSUserNotification *notification = [NSUserNotification new];
+        notification.hasActionButton = NO;
+        notification.title = title;
+        notification.informativeText = description;
+        [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:notification];
+
+
     }
 }
 
@@ -717,26 +681,13 @@ didChangeProgression:(float)progression
     {
         NSString *title = @"File uploaded";
         NSString *description = @"The URL has been written into your pasteboard";
-        NSString *notificationName = @"File uploaded";
         
-        if(NSClassFromString(@"NSUserNotification"))
-        {
-            NSUserNotification *notification = [NSUserNotification new];
-            notification.hasActionButton = NO;
-            notification.title = title;
-            notification.informativeText = description;
-            [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:notification];
-        }
-        else
-        {
-            [GrowlApplicationBridge notifyWithTitle:title
-                                        description:description
-                                   notificationName:notificationName
-                                           iconData:self.originalDockImageData
-                                           priority:0
-                                           isSticky:FALSE
-                                       clickContext:nil];
-        }
+        NSUserNotification *notification = [NSUserNotification new];
+        notification.hasActionButton = NO;
+        notification.title = title;
+        notification.informativeText = description;
+        [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:notification];
+
     }
   
 	[self displayCompletedIcons];

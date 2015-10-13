@@ -6,7 +6,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Growl/Growl.h>
 #import <ShortcutRecorder/ShortcutRecorder.h>
 #import "DDHotKeyCenter.h"
 #import "MVDockImage.h"

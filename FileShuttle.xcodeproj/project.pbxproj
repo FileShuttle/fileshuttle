@@ -27,8 +27,6 @@
 		4C9F98961493AB77007B80DD /* MVFTPFileUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9F98951493AB77007B80DD /* MVFTPFileUpload.m */; };
 		4C9F989B1493ACAD007B80DD /* MVFileUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9F989A1493ACAD007B80DD /* MVFileUpload.m */; };
 		4C9F98A71493C124007B80DD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C9F98A51493C11E007B80DD /* Security.framework */; };
-		4C9F98A91493D273007B80DD /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C9F98A81493D273007B80DD /* Growl.framework */; };
-		4C9F98AA1493D2BB007B80DD /* Growl.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4C9F98A81493D273007B80DD /* Growl.framework */; };
 		4C9F98AC1493D398007B80DD /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 4C9F98AB1493D398007B80DD /* Growl Registration Ticket.growlRegDict */; };
 		4C9F98AE14950C32007B80DD /* status_item.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C9F98AD14950C32007B80DD /* status_item.png */; };
 		4C9F98B014950D14007B80DD /* status_item_highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C9F98AF14950D14007B80DD /* status_item_highlighted.png */; };
@@ -68,7 +66,6 @@
 			files = (
 				4C4F4BDD16C5BA42005E32A3 /* CURLHandle.framework in Copy Frameworks */,
 				4C6B0C4114A920D600E35C50 /* ShortcutRecorder.framework in Copy Frameworks */,
-				4C9F98AA1493D2BB007B80DD /* Growl.framework in Copy Frameworks */,
 				4C9F98D6149521C7007B80DD /* RegexKit.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
@@ -102,7 +99,6 @@
 		4C9F98991493ACAD007B80DD /* MVFileUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVFileUpload.h; sourceTree = "<group>"; };
 		4C9F989A1493ACAD007B80DD /* MVFileUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVFileUpload.m; sourceTree = "<group>"; };
 		4C9F98A51493C11E007B80DD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		4C9F98A81493D273007B80DD /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		4C9F98AB1493D398007B80DD /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		4C9F98AD14950C32007B80DD /* status_item.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = status_item.png; sourceTree = "<group>"; };
 		4C9F98AF14950D14007B80DD /* status_item_highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = status_item_highlighted.png; sourceTree = "<group>"; };
@@ -163,7 +159,6 @@
 				4C9F98A71493C124007B80DD /* Security.framework in Frameworks */,
 				4CCC770513676313001D5C9E /* libcrypto.dylib in Frameworks */,
 				4CCC76C6136755DE001D5C9E /* Cocoa.framework in Frameworks */,
-				4C9F98A91493D273007B80DD /* Growl.framework in Frameworks */,
 				4C9F98D514952069007B80DD /* RegexKit.framework in Frameworks */,
 				4C6B0C3F14A91FE900E35C50 /* ShortcutRecorder.framework in Frameworks */,
 				4C4F4BDC16C5BA18005E32A3 /* CURLHandle.framework in Frameworks */,
@@ -219,7 +214,6 @@
 				4C6B0C4214A925D600E35C50 /* Carbon.framework */,
 				4C6B0C3E14A91FE900E35C50 /* ShortcutRecorder.framework */,
 				4C9F98D414952069007B80DD /* RegexKit.framework */,
-				4C9F98A81493D273007B80DD /* Growl.framework */,
 				4C9F98A51493C11E007B80DD /* Security.framework */,
 				4CCC76C5136755DE001D5C9E /* Cocoa.framework */,
 				4CCC76C7136755DE001D5C9E /* Other Frameworks */,
