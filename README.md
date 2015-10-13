@@ -9,11 +9,11 @@ Bug fixes for 10.8 and 10.9 will only be supported via Pull Requests on a case b
 
 Download 3.x-dev **WARNING - Development Version**: Not Yet available as a Built Binary
 * **New Feature** - 10.10+ officially supported
-* **Deprecation** - Growl Support formally dropped - Minimum required version is now 10.8
 * **Cleanup** - Migrated to CocoaPods for dependency management and updated:
-** Sparkle Library
-** **Replaced** EMKeychain with AHKeychain
-** Various Deprecated Methods updated/replaced
+  * Sparkle Library
+  * **Replaced** EMKeychain with AHKeychain
+  * Various Deprecated Methods updated/replaced
+  * **Deprecation** - Growl Support formally dropped - Minimum required version is now 10.8
 * **TODO** - Proper SSH2 based SFTP support including Public Key support
 * **TODO** - AWS S3 Support
 * **TODO** - Multiple URL Shortener Options inc Yourls
