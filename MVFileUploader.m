@@ -142,7 +142,7 @@
 		NSString *destination = [NSString stringWithFormat:
                              @"ssh://%@:%i/%@",hostname,port,path];
 		
-		tmpFileUpload = [[MVSFTPFileUpload alloc] initWithDestination:destination
+		tmpFileUpload = [[MVSCPFileUpload alloc] initWithDestination:destination
                                                          username:username
                                                          password:password
                                                            source:source

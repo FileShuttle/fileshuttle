@@ -55,6 +55,7 @@
 		4CFBC71D13F9AADA0043F56A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFBC71C13F9AADA0043F56A /* MainMenu.xib */; };
 		4CFBC72513F9AFE30043F56A /* MVPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFBC72413F9AFE30043F56A /* MVPreferencesController.m */; };
 		F807667A1BCC4FD800C1E857 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F80766791BCC4FD800C1E857 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
+		F80A7E001BCCD6FD0075C9D1 /* MVSCPFileUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = F80A7DFF1BCCD6FD0075C9D1 /* MVSCPFileUpload.m */; settings = {ASSET_TAGS = (); }; };
 		F8BE958C16C649DC001368E1 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = F8BE958B16C649DC001368E1 /* dsa_pub.pem */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +146,8 @@
 		4CFBC72413F9AFE30043F56A /* MVPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVPreferencesController.m; sourceTree = "<group>"; };
 		9BA9D8438E5BA6CB5A3FB2AD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F80766791BCC4FD800C1E857 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F80A7DFE1BCCD6FD0075C9D1 /* MVSCPFileUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVSCPFileUpload.h; sourceTree = "<group>"; };
+		F80A7DFF1BCCD6FD0075C9D1 /* MVSCPFileUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVSCPFileUpload.m; sourceTree = "<group>"; };
 		F863FE6D1BCC4231005E981E /* codesign-frameworks.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "codesign-frameworks.sh"; path = "Scripts/codesign-frameworks.sh"; sourceTree = "<group>"; };
 		F8951B011BCC479D00D088C5 /* codesign-frameworks2.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "codesign-frameworks2.sh"; path = "Scripts/codesign-frameworks2.sh"; sourceTree = "<group>"; };
 		F8BE958B16C649DC001368E1 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 				4C9F98941493AB77007B80DD /* MVFTPFileUpload.h */,
 				4C9F98951493AB77007B80DD /* MVFTPFileUpload.m */,
 				4C6CF8251497C6C5002C1E14 /* MVSFTPFileUpload.h */,
+				F80A7DFE1BCCD6FD0075C9D1 /* MVSCPFileUpload.h */,
+				F80A7DFF1BCCD6FD0075C9D1 /* MVSCPFileUpload.m */,
 				4C6CF8261497C6C5002C1E14 /* MVSFTPFileUpload.m */,
 				4C9F98991493ACAD007B80DD /* MVFileUpload.h */,
 				4C9F989A1493ACAD007B80DD /* MVFileUpload.m */,
@@ -455,6 +460,7 @@
 				4C9F98DC14952E08007B80DD /* MVZipFiles.m in Sources */,
 				4C9F98DF149530FA007B80DD /* MVStatusItemView.m in Sources */,
 				4C9F98E2149536F6007B80DD /* NSPasteboard+Files.m in Sources */,
+				F80A7E001BCCD6FD0075C9D1 /* MVSCPFileUpload.m in Sources */,
 				4C6CF8271497C6C5002C1E14 /* MVSFTPFileUpload.m in Sources */,
 				4C6CF82B1497C76D002C1E14 /* sshversion.c in Sources */,
 				4C6B0C4B14A9265600E35C50 /* DDHotKeyCenter.m in Sources */,
