@@ -871,8 +871,8 @@ CQ
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
-                        <binding destination="1206" name="value" keyPath="automaticallyChecksForUpdates" id="uDN-Qg-6dt"/>
                         <binding destination="1206" name="enabled" keyPath="automaticallyChecksForUpdates" id="TDY-EZ-0fz"/>
+                        <binding destination="1206" name="value" keyPath="automaticallyChecksForUpdates" id="uDN-Qg-6dt"/>
                     </connections>
                 </button>
                 <button id="g4q-pf-Hp4">
@@ -884,8 +884,8 @@ CQ
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
-                        <binding destination="1206" name="enabled" keyPath="automaticallyDownloadsUpdates" id="Lzf-lx-RNf"/>
                         <binding destination="1206" name="value" keyPath="automaticallyChecksForUpdates" id="RKA-SS-6te"/>
+                        <binding destination="1206" name="enabled" keyPath="automaticallyDownloadsUpdates" id="Lzf-lx-RNf"/>
                     </connections>
                 </button>
                 <popUpButton verticalHuggingPriority="750" id="CYp-0M-JOE">
