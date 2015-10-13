@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "MVFTPFileUpload.h"
 #import "MVSFTPFileUpload.h"
+#import "MVSCPFileUpload.h"
 #import "MVFileUpload.h"
 #import "MVFileUploadDelegate.h"
 

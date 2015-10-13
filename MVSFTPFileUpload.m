@@ -38,7 +38,7 @@
 
 extern int	errno;
 extern char	**environ;
-int scpconnecting = 0;
+int sftpconnecting = 0;
 
 @synthesize scppid		= scppid_,
             masterfd	= masterfd_;
@@ -186,7 +186,7 @@ int scpconnecting = 0;
   strcpy( executable, [ scpBinary UTF8String ] );
   execargs[ 0 ] = executable;
 	
-  scpconnecting = 1;
+  sftpconnecting = 1;
 	
 	char* portarg = (char*)[[[NSNumber numberWithInt:portnumber]stringValue]UTF8String];
 	
